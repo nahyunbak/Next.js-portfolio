@@ -11,7 +11,6 @@ import {
   ToggleIcon,
 } from "./StyledHeader";
 
-import Link from "next/link";
 const Header = () => {
   return (
     <HeaderWrapper>
@@ -22,18 +21,41 @@ const Header = () => {
         </TitleWrapper>
         <NavWrapper>
           <ItemWrapper>
-            <LiWrapper>
-              <Link href="#">Home</Link>
+            <LiWrapper
+              to="aboutme"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              Home
             </LiWrapper>
-            <LiWrapper>
-              <Link href="#">About</Link>
+            <LiWrapper
+              to="aboutme"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              About
             </LiWrapper>
-            <LiWrapper>
-              <Link href="#">Skills</Link>
+            <LiWrapper
+              to="aboutme"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              Skills
             </LiWrapper>
-            <LiWrapper>
-              <Link href="#">Projects</Link>
-
+            <LiWrapper
+              to="aboutme"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
+            >
+              Projects
               <ToggleIcon />
             </LiWrapper>
           </ItemWrapper>

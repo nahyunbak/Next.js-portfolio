@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { Link as Links } from "react-scroll";
 
 export const HeaderWrapper = styled.div`
   width: 100vw;
-  height: 200px;
+  height: 130px;
   font-family: "Noto Sans KR", sans-serif;
   display: flex;
   justify-content: center;
@@ -81,7 +82,7 @@ export const ItemWrapper = styled.ul`
   align-items: center;
 `;
 
-export const LiWrapper = styled.li`
+export const LiWrapper = styled(Links)`
   font-size: 1rem;
   list-style-type: none;
   cursor: pointer;
