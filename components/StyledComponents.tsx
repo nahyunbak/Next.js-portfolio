@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BodyWrapper = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 140vh;
   background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
 `;
 
@@ -17,6 +17,8 @@ export const Obj1 = styled.div`
   height: 500px;
   border-radius: 50%;
   background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  position: absolute;
+  top: -500px;
 `;
 
 export const Obj2 = styled.div`
@@ -26,4 +28,5 @@ export const Obj2 = styled.div`
   background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
   margin-top: -400px;
   opacity: 0.5;
+  position: absolute;
 `;

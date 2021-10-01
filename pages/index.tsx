@@ -6,32 +6,15 @@ import {
   Obj2,
 } from "../components/StyledComponents";
 import useSWR from "swr";
-
-let testValue = "testValue";
-export function useTestSWR() {
-  const { data, mutate } = useSWR<string>("testSWR", () => {
-    return testValue;
-  });
-
-  return {
-    data,
-    mutate: (value: string) => {
-      testValue = value;
-      return mutate();
-    },
-  };
-}
+import Greet from "../components/Greet";
 
 export default function Home() {
   return (
     <>
-      <BodyWrapper>
-        <Header />
-        <Obj1></Obj1>
-        <Obj2></Obj2>
-      </BodyWrapper>
-      <BodyWrapper2 name="aboutme" />
-      <Home />
+      <Header />
+      <Greet />
+      <Obj1></Obj1>
+      <Obj2></Obj2>
     </>
   );
 }

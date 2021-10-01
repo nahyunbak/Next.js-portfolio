@@ -26,6 +26,7 @@ export const MenuWrapper = styled.div`
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   position: fixed;
   backdrop-filter: blur(15px);
+  z-index: 2;
 `;
 
 export const TitleWrapper = styled.div`

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   HomeCard,
   HomeContentsWrapper,
@@ -10,17 +9,28 @@ import {
   HomeWomanImg,
   HomeWrapper,
 } from "./StyledHome";
-const Home = () => {
+const Greet = () => {
   return (
     <HomeWrapper>
       <HomeContentsWrapper>
         <HomeTextWrapper>
-          <HomeTitleArea>개발자 박나현입니다</HomeTitleArea>
-          <HomeIntrodueArea>개발이 취미에요!!</HomeIntrodueArea>
+          <HomeTitleArea>
+            안녕하세요
+            <br />
+            JS 개발자
+            <br />
+            박나현입니다
+          </HomeTitleArea>
+          <HomeIntrodueArea>
+            빠른 손
+            <br />
+            맡은 일은 끝까지 책임지는 근성
+            <br /> 개발에 품은 애정이 제 장점입니다.
+          </HomeIntrodueArea>
           <HomeReadMoreButton>Read More</HomeReadMoreButton>
         </HomeTextWrapper>
         <HomeImgWrapper>
-          <HomeWomanImg />
+          <HomeWomanImg src="/girlcomputer.png" />
           <HomeCard />
         </HomeImgWrapper>
       </HomeContentsWrapper>
@@ -28,4 +38,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Greet;
