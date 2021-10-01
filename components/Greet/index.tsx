@@ -1,4 +1,9 @@
 import {
+  BackCard,
+  CardLogo,
+  CardWrapper,
+  CareerLi,
+  FrontCard,
   HomeCard,
   HomeContentsWrapper,
   HomeImgWrapper,
@@ -8,6 +13,9 @@ import {
   HomeTitleArea,
   HomeWomanImg,
   HomeWrapper,
+  ProfileDetail,
+  ProfileDetailWrapper,
+  ProfileImg,
 } from "./StyledHome";
 const Greet = () => {
   return (
@@ -31,7 +39,21 @@ const Greet = () => {
         </HomeTextWrapper>
         <HomeImgWrapper>
           <HomeWomanImg src="/girlcomputer.png" />
-          <HomeCard />
+          <CardWrapper>
+            <HomeCard>
+              <FrontCard>
+                <ProfileImg src="/face.png" />
+                <ProfileDetailWrapper>
+                  <ProfileDetail>주소</ProfileDetail>
+                  <ProfileDetail>메일</ProfileDetail>
+                </ProfileDetailWrapper>
+              </FrontCard>
+              <BackCard>
+                <CardLogo src="/logo.png" />
+                <CareerLi>js개발자</CareerLi>
+              </BackCard>
+            </HomeCard>
+          </CardWrapper>
         </HomeImgWrapper>
       </HomeContentsWrapper>
     </HomeWrapper>

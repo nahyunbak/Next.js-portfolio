@@ -9,6 +9,10 @@ const glassStyle = css`
   border-radius: 20px;
 `;
 
+const removeLiDeco = css`
+  list-style-type: none;
+`;
+
 export const HomeWrapper = styled.div`
   width: 100vw;
   height: 140vh;
@@ -82,15 +86,79 @@ export const HomeWomanImg = styled.img`
   margin-right: 60px;
 `;
 
+export const CardWrapper = styled.div`
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  top: 40px;
+  right: 0px;
+`;
 export const HomeCard = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 100;
+  top: 200px;
+  right: 60px;
+
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  &:hover {
+    transform: rotateY(180deg);
+  }
+  position: absolute;
+`;
+
+export const FrontCard = styled.div`
+  position: absolute;
   width: 200px;
   height: 300px;
   ${glassStyle}
-  z-index:100;
+  backdrop-filter: blur(0px);
+  backface-visibility: hidden;
+  background: rgba(243, 162, 162, 0.5);
+`;
+
+export const ProfileImg = styled.img`
+  width: 100px;
+  height: 100px;
+`;
+
+export const ProfileDetailWrapper = styled.div`
+  width: 160px;
+  height: 200px;
+`;
+
+export const ProfileDetail = styled.li`
+  ${removeLiDeco}
+  font-size: 1.4rem;
+  color: white;
+`;
+
+export const BackCard = styled.div`
   position: absolute;
-  top: 200px;
-  right: 60px;
-  background: rgba(255, 255, 255, 0.5);
+  width: 200px;
+  height: 300px;
+  ${glassStyle}
+  backdrop-filter: blur(0px);
+  backface-visibility: hidden;
+  background: rgba(127, 177, 148, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotateY(180deg);
+`;
+
+export const CardLogo = styled.img`
+  width: 200px;
+  height: 200px;
+`;
+
+export const CareerLi = styled.li`
+  ${removeLiDeco}
+  font-size: 1.4rem;
+  color: white;
 `;
 /**
  * 
@@ -108,7 +176,25 @@ export const HomeCard = styled.div`
               </HomeTextWrapper>
             <HomeImgWrapper>
                 <HomeWomanImg/>
-                <HomeCard/>
+                <HomeCard>
+            <FrontCard>
+            
+            <ProfileImg/>
+            <ProfileDetailWrapper>
+            <ProfileDetail></ProfileDetail>
+            <ProfileDetail></ProfileDetail>
+            </ProfileDetailWrapper>
+
+            </FrontCard>
+            <BackCard>
+            <CardLogo/>
+            <CareerLi></CareerLi>
+              
+            </BackCard>
+          
+
+
+          </HomeCard>
 
             </HomeImgWrapper>
 
