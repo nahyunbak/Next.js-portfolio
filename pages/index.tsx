@@ -4,9 +4,10 @@ import {
   BodyWrapper2,
   Obj1,
   Obj2,
-} from "../components/StyledComponents";
+} from "../components/GlobalStyle";
 import useSWR from "swr";
 import Greet from "../components/Greet";
+import About from "../components/About";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Greet />
       <Obj1></Obj1>
       <Obj2></Obj2>
+      <About />
     </>
   );
 }

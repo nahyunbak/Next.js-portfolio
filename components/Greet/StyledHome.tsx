@@ -1,17 +1,6 @@
-import styled, { css } from "styled-components";
-
-const glassStyle = css`
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-`;
-
-const removeLiDeco = css`
-  list-style-type: none;
-`;
+import styled from "styled-components";
+import { AiTwotoneMail } from "react-icons/ai";
+import { cardIconStyle, glassStyle, removeLiDeco } from "../GlobalStyle";
 
 export const HomeWrapper = styled.div`
   width: 100vw;
@@ -25,19 +14,19 @@ export const HomeWrapper = styled.div`
 `;
 
 export const HomeContentsWrapper = styled.div`
-  width: 70vw;
+  width: 1400px;
   height: 750px;
-  margin-top: -200px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   ${glassStyle}
-  z-index: 0;
+  z-index: 1;
 `;
 
 export const HomeTextWrapper = styled.div`
   width: 450px;
-  height: 650px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,15 +50,23 @@ export const HomeIntrodueArea = styled.div`
 `;
 
 export const HomeReadMoreButton = styled.div`
-  width: 150px;
-  height: 80px;
+  width: 170px;
+  height: 60px;
   border-radius: 14px;
-  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  margin-top: -40px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+    letter-spacing: 1px;
+  }
 `;
 
 export const HomeImgWrapper = styled.div`
@@ -83,8 +80,10 @@ export const HomeImgWrapper = styled.div`
 export const HomeWomanImg = styled.img`
   width: 510px;
   height: 680px;
-  margin-right: 60px;
+  margin-right: 10px;
 `;
+
+//카드 디자인
 
 export const CardWrapper = styled.div`
   position: absolute;
@@ -111,28 +110,48 @@ export const HomeCard = styled.div`
 
 export const FrontCard = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 300px;
   ${glassStyle}
   backdrop-filter: blur(0px);
   backface-visibility: hidden;
-  background: rgba(243, 162, 162, 0.5);
+  background: rgba(251, 93, 93, 0.5);
+  color: #fff3f3;
 `;
 
 export const ProfileImg = styled.img`
-  width: 100px;
-  height: 100px;
-`;
-
-export const ProfileDetailWrapper = styled.div`
-  width: 160px;
+  width: 200px;
   height: 200px;
 `;
 
+export const ProfileName = styled.li`
+  ${removeLiDeco};
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 10px;
+`;
+export const ProfileDetailWrapper = styled.div`
+  margin-top: 8px;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(255, 120, 120, 0.5);
+  border-radius: 0 0 20px 20px;
+`;
+
 export const ProfileDetail = styled.li`
-  ${removeLiDeco}
-  font-size: 1.4rem;
-  color: white;
+  ${removeLiDeco};
+
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4e0000;
 `;
 
 export const BackCard = styled.div`
@@ -142,7 +161,7 @@ export const BackCard = styled.div`
   ${glassStyle}
   backdrop-filter: blur(0px);
   backface-visibility: hidden;
-  background: rgba(127, 177, 148, 0.5);
+  background: rgba(127, 177, 148, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,14 +170,33 @@ export const BackCard = styled.div`
 `;
 
 export const CardLogo = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
+  margin-top: -20px;
+`;
+
+export const CareerWrapper = styled.div`
+  width: 140px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top: -30px;
 `;
 
 export const CareerLi = styled.li`
   ${removeLiDeco}
-  font-size: 1.4rem;
-  color: white;
+  font-size: 1rem;
+  color: #f2fff5;
+  text-align: start;
+  font-weight: 500;
+`;
+
+// 아이콘 디자인
+
+export const MailIcon = styled(AiTwotoneMail)`
+  ${cardIconStyle}
 `;
 /**
  * 
