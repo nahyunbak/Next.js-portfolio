@@ -18,7 +18,6 @@ export default function Home() {
       <Obj1></Obj1>
       <Obj2></Obj2>
       <About />
-      <Skills />
     </>
   );
 }
