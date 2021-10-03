@@ -8,7 +8,6 @@ import {
 import useSWR from "swr";
 import Greet from "../components/Greet";
 import About from "../components/About";
-import Skills from "../components/Skills/index.";
 
 export default function Home() {
   return (
