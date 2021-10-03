@@ -35,10 +35,10 @@ const Greet = () => {
             박나현입니다
           </HomeTitleArea>
           <HomeIntrodueArea>
-            빠른 손
-            <br />
-            맡은 일은 끝까지 책임지는 근성
-            <br /> 개발에 품은 애정이 제 장점입니다.
+            빠른 손, 유창한 영어 구사력, 개발을 향한 무한한 애정이 제
+            장점입니다.
+            <br /> 항상 어제보다 나은 개발자가 되고자 노력합니다.
+            <br /> 오늘의 나는 요행이 아닌 노력으로 일궈졌음을 알기 때문입니다.
           </HomeIntrodueArea>
 
           <HomeReadMoreButton>Read More</HomeReadMoreButton>

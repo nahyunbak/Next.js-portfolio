@@ -15,7 +15,7 @@ export const HomeWrapper = styled.div`
 
 export const HomeContentsWrapper = styled.div`
   width: 1400px;
-  height: 750px;
+  height: 900px;
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@ export const HomeContentsWrapper = styled.div`
 
 export const HomeTextWrapper = styled.div`
   width: 450px;
-  height: 600px;
+  height: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,14 +39,16 @@ export const HomeTitleArea = styled.div`
   color: white;
   font-size: 5rem;
   font-weight: 600;
+  line-height: 93px;
 `;
 
 export const HomeIntrodueArea = styled.div`
   width: 500px;
   height: 200px;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-top: 200px;
+  line-height: 40px;
 `;
 
 export const HomeReadMoreButton = styled.div`
@@ -55,7 +57,7 @@ export const HomeReadMoreButton = styled.div`
   border-radius: 14px;
 
   background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-  margin-top: -40px;
+
   color: white;
   display: flex;
   justify-content: center;
@@ -63,6 +65,7 @@ export const HomeReadMoreButton = styled.div`
   font-size: 1.3rem;
   transition: all ease-in-out 0.3s;
   cursor: pointer;
+  margin-top: 30px;
   &:hover {
     background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
     letter-spacing: 1px;
@@ -71,15 +74,15 @@ export const HomeReadMoreButton = styled.div`
 
 export const HomeImgWrapper = styled.div`
   width: 700px;
-  height: 600px;
+  height: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 export const HomeWomanImg = styled.img`
-  width: 510px;
-  height: 680px;
+  width: 540px;
+  height: 720px;
   margin-right: 10px;
 `;
 
@@ -89,7 +92,7 @@ export const CardWrapper = styled.div`
   position: absolute;
   width: 200px;
   height: 300px;
-  top: 40px;
+  top: 130px;
   right: 0px;
 `;
 export const HomeCard = styled.div`
@@ -119,7 +122,7 @@ export const FrontCard = styled.div`
   ${glassStyle}
   backdrop-filter: blur(0px);
   backface-visibility: hidden;
-  background: rgba(251, 93, 93, 0.5);
+
   color: #fff3f3;
 `;
 
@@ -161,7 +164,7 @@ export const BackCard = styled.div`
   ${glassStyle}
   backdrop-filter: blur(0px);
   backface-visibility: hidden;
-  background: rgba(127, 177, 148, 0.6);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -176,13 +179,16 @@ export const CardLogo = styled.img`
 `;
 
 export const CareerWrapper = styled.div`
-  width: 140px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
   margin-top: -30px;
+  background: rgba(127, 177, 148, 0.6);
+  border-radius: 0px 0px 20px 20px;
+  padding-top: 6px;
 `;
 
 export const CareerLi = styled.li`
@@ -191,6 +197,7 @@ export const CareerLi = styled.li`
   color: #f2fff5;
   text-align: start;
   font-weight: 500;
+  margin-left: 20px;
 `;
 
 // 아이콘 디자인

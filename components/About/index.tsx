@@ -23,7 +23,9 @@ const About = () => {
   return (
     <AboutWrapper>
       <AboutArea>
-        <AboutTitle>ABOUT</AboutTitle>
+        <Tilt>
+          <AboutTitle>ABOUT</AboutTitle>
+        </Tilt>
         <AboutContentsWrapper>
           <Tilt>
             <AboutNameCardWrapper>
