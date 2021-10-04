@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 import { AiFillMail } from "react-icons/ai";
-import { removeLiDeco, glassStyle } from "../GlobalStyle";
+import { removeLiDeco, glassStyle, titleStyle } from "../GlobalStyle";
 import { FaSchool } from "react-icons/fa";
 import {
   BsFillHouseDoorFill,
@@ -57,26 +57,11 @@ export const AboutArea = styled.div`
 
 export const AboutTitle = styled.div`
   ${glassStyle};
-  width: 600px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  font-weight: 900;
-  color: #363636;
+
+  ${titleStyle}
   margin-top: 20px;
-  background-image: linear-gradient(
-    to top,
-    #dad4ec 0%,
-    #dad4ec 1%,
-    #f3e7e9 100%
-  );
-  transition: 0.5s;
   &:hover {
-    transform: scale(1.1);
     background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-    letter-spacing: 5px;
   }
 `;
 export const AboutContentsWrapper = styled.div`
