@@ -60,9 +60,6 @@ export const AboutTitle = styled.div`
 
   ${titleStyle}
   margin-top: 20px;
-  &:hover {
-    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  }
 `;
 export const AboutContentsWrapper = styled.div`
   width: 1500px;

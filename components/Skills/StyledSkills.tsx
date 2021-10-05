@@ -74,7 +74,7 @@ export const InsideLeftSkillsWrapper = styled.div`
   transition: all 2s ease;
   &:hover {
     transform: rotateY(180deg);
-    transition-delay: 1.3s;
+    transition-delay: 1s;
   }
 `;
 
@@ -85,7 +85,7 @@ export const InsideRightSkillsWrapper = styled.div`
   transition: all 2s ease;
   &:hover {
     transform: rotateY(180deg);
-    transition-delay: 1.3s;
+    transition-delay: 1s;
   }
 `;
 

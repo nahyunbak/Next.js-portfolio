@@ -17,49 +17,59 @@ import {
   AboutUnivCardWrapper,
   AboutWrapper,
 } from "./StyledHome";
-
+import Tilt from "react-parallax-tilt";
 const About = () => {
   return (
     <AboutWrapper name="aboutme">
       <AboutArea>
-        <AboutTitle>ABOUT</AboutTitle>
-
+        <Tilt>
+          <AboutTitle>ABOUT</AboutTitle>
+        </Tilt>
         <AboutContentsWrapper>
-          <AboutNameCardWrapper>
-            <AboutIconName />
+          <Tilt>
+            <AboutNameCardWrapper>
+              <AboutIconName />
 
-            <AboutText>박나현</AboutText>
-          </AboutNameCardWrapper>
+              <AboutText>박나현</AboutText>
+            </AboutNameCardWrapper>
+          </Tilt>
 
-          <AboutBirthCardWrapper>
-            <AboutIconBirth />
+          <Tilt>
+            <AboutBirthCardWrapper>
+              <AboutIconBirth />
 
-            <AboutText>1995.03.04</AboutText>
-          </AboutBirthCardWrapper>
+              <AboutText>1995.03.04</AboutText>
+            </AboutBirthCardWrapper>
+          </Tilt>
+          <Tilt>
+            <AboutLiveCardWrapper>
+              <AboutIconLive />
 
-          <AboutLiveCardWrapper>
-            <AboutIconLive />
+              <AboutText>경기도 안양시 동안구</AboutText>
+            </AboutLiveCardWrapper>
+          </Tilt>
+          <Tilt>
+            <AboutPhoneCardWrapper>
+              <AboutIconPhone />
 
-            <AboutText>경기도 안양시 동안구</AboutText>
-          </AboutLiveCardWrapper>
+              <AboutText>010-9167-5977</AboutText>
+            </AboutPhoneCardWrapper>
+          </Tilt>
+          <Tilt>
+            <AboutMailCardWrapper>
+              <AboutIconMail />
 
-          <AboutPhoneCardWrapper>
-            <AboutIconPhone />
+              <AboutText>nahyunbak@naver.com</AboutText>
+            </AboutMailCardWrapper>
+          </Tilt>
 
-            <AboutText>010-9167-5977</AboutText>
-          </AboutPhoneCardWrapper>
+          <Tilt>
+            <AboutUnivCardWrapper>
+              <AboutIconUniv />
 
-          <AboutMailCardWrapper>
-            <AboutIconMail />
-
-            <AboutText>nahyunbak@naver.com</AboutText>
-          </AboutMailCardWrapper>
-
-          <AboutUnivCardWrapper>
-            <AboutIconUniv />
-
-            <AboutText>경인교대 초등교육학과</AboutText>
-          </AboutUnivCardWrapper>
+              <AboutText>경인교대 초등교육학과</AboutText>
+            </AboutUnivCardWrapper>
+          </Tilt>
         </AboutContentsWrapper>
       </AboutArea>
     </AboutWrapper>

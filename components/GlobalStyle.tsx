@@ -68,6 +68,7 @@ export const titleStyle = css`
   &:hover {
     transform: scale(1.1);
     letter-spacing: 5px;
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
   }
 `;
 

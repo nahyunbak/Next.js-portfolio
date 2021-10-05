@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,10 +14,8 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",
-    "react-parallax": "^3.3.0",
-    "react-parallax-tilt": "^1.5.66",
+    "react-parallax-tilt": "^1.5.67",
     "react-scroll": "^1.8.4",
-    "react-tilt": "^0.1.4",
     "styled-components": "^5.3.1",
     "swr": "^1.0.1"
   },
