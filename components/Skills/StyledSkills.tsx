@@ -28,7 +28,6 @@ export const SkillsWrapper = styled.div<NameType>`
 
 export const SkillsArea = styled.div`
   padding: 50px;
-  margin-top: 100px;
 
   ${glassStyle};
   display: flex;
@@ -75,7 +74,7 @@ export const InsideLeftSkillsWrapper = styled.div`
   transition: all 2s ease;
   &:hover {
     transform: rotateY(180deg);
-    transition-delay: 1s;
+    transition-delay: 0.3s;
   }
 `;
 
@@ -86,7 +85,7 @@ export const InsideRightSkillsWrapper = styled.div`
   transition: all 2s ease;
   &:hover {
     transform: rotateY(180deg);
-    transition-delay: 1s;
+    transition-delay: 0.3s;
   }
 `;
 
@@ -123,7 +122,6 @@ export const FrontSkillsWrapper = styled.div`
 export const InsideFrontSkillsTitle = styled.div`
   ${glassStyle};
   ${insideTitleStyle}
-  margin: 30px;
 `;
 export const InsideFrontSkillsWrapper = styled.div`
   display: flex;
@@ -150,8 +148,6 @@ export const BackSkillsWrapper = styled.div`
 export const InsideBackSkillsTitle = styled.div`
   ${glassStyle};
   ${insideTitleStyle};
-
-  margin: 30px;
 `;
 export const InsideBackSkillsWrapper = styled.div`
   display: flex;
@@ -163,7 +159,7 @@ export const InsideBackSkillsWrapper = styled.div`
 //버젼관리 기술스택
 export const VersionSkillsWrapper = styled.div`
   ${insideRightStyle}
-  flex-direction: column;
+
   position: absolute;
 
   ${glassStyle};
@@ -179,7 +175,6 @@ export const InsideVersionSkillsTitle = styled.div`
   ${glassStyle};
   ${insideTitleStyle};
   width: 300px;
-  margin: 30px;
 `;
 export const InsideVersionSkillsWrapper = styled.div`
   display: flex;
@@ -209,6 +204,7 @@ export const InsideDeploySkillsTitle = styled.div`
   ${glassStyle};
   ${insideTitleStyle};
   width: 300px;
+  margin: 30px;
 `;
 export const InsideDeploySkillsWrapper = styled.div`
   display: flex;

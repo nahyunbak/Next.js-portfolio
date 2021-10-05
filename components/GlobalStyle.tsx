@@ -80,6 +80,7 @@ export const insideTitleStyle = css`
   color: #363636;
   width: 400px;
   height: 80px;
+  margin: 30px;
 
   background-image: linear-gradient(
     to top,
