@@ -23,7 +23,7 @@ export const SkillsWrapper = styled.div<NameType>`
   height: 140vh;
   ${glassStyle};
   ${verticalCenterStyle}
-  background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
+  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
 `;
 
 export const SkillsArea = styled.div`
@@ -40,9 +40,9 @@ export const SkillImg = styled.img`
   display: inline-block;
   padding: 20px;
   height: 60px;
-  -webkit-tap-highlight-color: transparent;
 
   ${glassStyle};
+  -webkit-tap-highlight-color: transparent;
   margin: 15px;
   &:hover {
     background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
@@ -74,7 +74,7 @@ export const InsideLeftSkillsWrapper = styled.div`
   transition: all 2s ease;
   &:hover {
     transform: rotateY(180deg);
-    transition-delay: 0.3s;
+    transition-delay: 1.3s;
   }
 `;
 
@@ -85,7 +85,7 @@ export const InsideRightSkillsWrapper = styled.div`
   transition: all 2s ease;
   &:hover {
     transform: rotateY(180deg);
-    transition-delay: 0.3s;
+    transition-delay: 1.3s;
   }
 `;
 
@@ -93,7 +93,6 @@ export const InsideRightSkillsWrapper = styled.div`
 export const InsidePrevSkillsWrapper = styled.div`
   max-width: 1500px;
   max-height: 1000px;
-
   display: flex;
   justify-content: flex-start;
   align-items: center;

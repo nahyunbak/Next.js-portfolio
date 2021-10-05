@@ -113,21 +113,53 @@ const Skills = () => {
   };
 
   const toggleFrontAll = () => {
-    setSkillData((oldState: string[]) => oldState.concat(frontData));
-    setFrontData([]);
+    if (frontData.length !== 0) {
+      setSkillData((oldState: string[]) => oldState.concat(frontData));
+      setFrontData([]);
+      console.log(frontData);
+    } else {
+      setFrontData(frontSkills);
+      setSkillData((oldState: string[]) =>
+        oldState.filter((item) => !frontSkills.includes(item))
+      );
+    }
   };
 
   const toggleBackAll = () => {
-    setSkillData((oldState: string[]) => oldState.concat(backData));
-    setBackData([]);
+    if (backData.length !== 0) {
+      setSkillData((oldState: string[]) => oldState.concat(backData));
+      setBackData([]);
+      console.log(backData);
+    } else {
+      setBackData(backSkills);
+      setSkillData((oldState: string[]) =>
+        oldState.filter((item) => !backSkills.includes(item))
+      );
+    }
   };
   const toggleVersionAll = () => {
-    setSkillData((oldState: string[]) => oldState.concat(versionData));
-    setVersionData([]);
+    if (versionData.length !== 0) {
+      setSkillData((oldState: string[]) => oldState.concat(versionData));
+      setVersionData([]);
+      console.log(versionData);
+    } else {
+      setVersionData(versionSkills);
+      setSkillData((oldState: string[]) =>
+        oldState.filter((item) => !versionSkills.includes(item))
+      );
+    }
   };
   const toggleDeployAll = () => {
-    setSkillData((oldState: string[]) => oldState.concat(deployData));
-    setDeployData([]);
+    if (deployData.length !== 0) {
+      setSkillData((oldState: string[]) => oldState.concat(deployData));
+      setDeployData([]);
+      console.log(deployData);
+    } else {
+      setDeployData(deploySkills);
+      setSkillData((oldState: string[]) =>
+        oldState.filter((item) => !deploySkills.includes(item))
+      );
+    }
   };
 
   return (
