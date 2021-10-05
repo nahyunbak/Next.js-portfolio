@@ -5,7 +5,7 @@ import { glassStyle, insideTitleStyle, titleStyle } from "../GlobalStyle";
 const SkillImgStyle = css``;
 export const SkillsWrapper = styled.div`
   width: 100vw;
-  height: 300vh;
+  height: 120vh;
   ${glassStyle};
   display: flex;
   flex-direction: column;
@@ -17,7 +17,7 @@ export const SkillsWrapper = styled.div`
 
 export const SkillsArea = styled.div`
   max-width: 1900px;
-  max-height: 3000px;
+  max-height: 1500px;
   ${glassStyle};
   display: flex;
   flex-direction: column;
@@ -27,25 +27,25 @@ export const SkillsArea = styled.div`
 
 export const SkillImg = styled.img`
   padding: 20px;
-  height: 70px;
+  height: 60px;
 
   ${glassStyle};
-  margin: 20px;
+  margin: 15px;
   &:hover {
     background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
   }
 `;
 
 export const PrevSkillsWrapper = styled.div`
-  max-width: 1200px;
+  max-width: 1000px;
   max-height: 900px;
   ${glassStyle};
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin: 100px;
-  padding: 30px;
+  margin-top: 100px;
+  padding: 0px 50px;
 
   justify-content: space-around;
   align-items: center;
@@ -75,12 +75,10 @@ export const NextSkillsWrapper = styled.div`
   align-items: flex-start;
   width: 1600px;
   height: 2000px;
-
-  backdrop-filter: blur(15px);
 `;
 
 export const FrontSkillsWrapper = styled.div`
-  max-width: 600px;
+  max-width: 500px;
   max-height: 1200px;
   ${glassStyle};
   display: flex;
@@ -88,8 +86,9 @@ export const FrontSkillsWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   position: absolute;
-  top: 100px;
+  top: 250px;
   left: 150px;
+  padding: 20px;
 `;
 
 export const InsideFrontSkillsTitle = styled.div`
@@ -98,9 +97,9 @@ export const InsideFrontSkillsTitle = styled.div`
   margin: 30px;
 `;
 export const InsideFrontSkillsWrapper = styled.div`
-  max-width: 600px;
+  max-width: 450px;
   max-height: 850px;
-  padding: 50px;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -112,12 +111,13 @@ export const BackSkillsWrapper = styled.div`
   max-height: 800px;
   ${glassStyle};
   display: flex;
+  padding: 20px;
 
   justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
   position: absolute;
-  top: 100px;
+  top: 250px;
   right: 150px;
 `;
 
@@ -130,7 +130,7 @@ export const InsideBackSkillsTitle = styled.div`
 export const InsideBackSkillsWrapper = styled.div`
   max-width: 500px;
   max-height: 600px;
-  padding: 50px;
+
   display: flex;
 
   justify-content: space-around;
@@ -138,17 +138,16 @@ export const InsideBackSkillsWrapper = styled.div`
   flex-wrap: wrap;
 `;
 export const VersionSkillsWrapper = styled.div`
-  width: 500px;
-  height: 580px;
-
+  max-width: 560px;
+  max-height: 340px;
   ${glassStyle};
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   position: absolute;
-  top: 950px;
-  left: 150px;
+  top: 620px;
+  left: 680px;
 `;
 
 export const InsideVersionSkillsTitle = styled.div`
@@ -158,8 +157,6 @@ export const InsideVersionSkillsTitle = styled.div`
   margin: 30px;
 `;
 export const InsideVersionSkillsWrapper = styled.div`
-  width: 750px;
-  height: 330px;
   padding: 50px;
   display: flex;
   justify-content: space-around;
@@ -167,17 +164,17 @@ export const InsideVersionSkillsWrapper = styled.div`
   flex-wrap: wrap;
 `;
 export const DeploySkillsWrapper = styled.div`
-  width: 600px;
-  height: 200px;
-  margin-top: 500px;
+  max-width: 300px;
+  max-height: 380px;
+
   ${glassStyle};
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   position: absolute;
-  top: 650px;
-  left: 800px;
+  top: 600px;
+  right: 750px;
   padding: 40px;
 `;
 
@@ -185,11 +182,8 @@ export const InsideDeploySkillsTitle = styled.div`
   ${glassStyle};
   ${insideTitleStyle};
   width: 300px;
-  margin: 30px;
 `;
 export const InsideDeploySkillsWrapper = styled.div`
-  width: 750px;
-  height: 350px;
   padding: 50px;
   display: flex;
   justify-content: space-around;

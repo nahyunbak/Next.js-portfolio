@@ -21,7 +21,7 @@ import Tilt from "react-tilt";
 
 const About = () => {
   return (
-    <AboutWrapper>
+    <AboutWrapper name="aboutme">
       <AboutArea>
         <Tilt>
           <AboutTitle>ABOUT</AboutTitle>

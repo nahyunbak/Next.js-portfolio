@@ -40,7 +40,7 @@ const Header = () => {
               About
             </LiWrapper>
             <LiWrapper
-              to="aboutme"
+              to="skills"
               spy={true}
               smooth={true}
               offset={0}
