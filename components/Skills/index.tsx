@@ -9,12 +9,15 @@ import {
   InsideDeploySkillsWrapper,
   InsideFrontSkillsTitle,
   InsideFrontSkillsWrapper,
+  InsideLeftSkillsCard,
+  InsideLeftSkillsWrapper,
   InsidePrevSkillsTitle,
   InsidePrevSkillsWrapper,
+  InsideRightSkillsCard,
+  InsideRightSkillsWrapper,
   InsideVersionSkillsTitle,
   InsideVersionSkillsWrapper,
   NextSkillsWrapper,
-  PrevSkillsWrapper,
   SkillImg,
   SkillsArea,
   SkillsWrapper,
@@ -96,7 +99,7 @@ const Skills = () => {
 
   return (
     <SkillsWrapper name="skills">
-      <PrevSkillsWrapper>
+      <SkillsArea>
         <InsidePrevSkillsTitle>SKILLS</InsidePrevSkillsTitle>
         <InsidePrevSkillsWrapper>
           {skillData.map((skill: string, index) => {
@@ -109,65 +112,73 @@ const Skills = () => {
             );
           })}
         </InsidePrevSkillsWrapper>
-      </PrevSkillsWrapper>
-      <NextSkillsWrapper>
-        <FrontSkillsWrapper>
-          <InsideFrontSkillsTitle>프론트엔드</InsideFrontSkillsTitle>
-          <InsideFrontSkillsWrapper>
-            {frontData.map((skill: string, index) => {
-              return (
-                <SkillImg
-                  key={index}
-                  src={`/${skill}.png`}
-                  onClick={() => toggleFront(skill)}
-                />
-              );
-            })}
-          </InsideFrontSkillsWrapper>
-        </FrontSkillsWrapper>
-        <BackSkillsWrapper>
-          <InsideBackSkillsTitle>백엔드</InsideBackSkillsTitle>
-          <InsideBackSkillsWrapper>
-            {backData.map((skill: string, index) => {
-              return (
-                <SkillImg
-                  key={index}
-                  src={`/${skill}.png`}
-                  onClick={() => toggleBack(skill)}
-                />
-              );
-            })}
-          </InsideBackSkillsWrapper>
-        </BackSkillsWrapper>
-        <VersionSkillsWrapper>
-          <InsideVersionSkillsTitle>버젼관리</InsideVersionSkillsTitle>
-          <InsideVersionSkillsWrapper>
-            {versionData.map((skill: string, index) => {
-              return (
-                <SkillImg
-                  key={index}
-                  src={`/${skill}.png`}
-                  onClick={() => toggleVersion(skill)}
-                />
-              );
-            })}
-          </InsideVersionSkillsWrapper>
-        </VersionSkillsWrapper>
-        <DeploySkillsWrapper>
-          <InsideDeploySkillsTitle>배포</InsideDeploySkillsTitle>
-          <InsideDeploySkillsWrapper>
-            {deployData.map((skill: string, index) => {
-              return (
-                <SkillImg
-                  key={index}
-                  src={`/${skill}.png`}
-                  onClick={() => toggleDeploy(skill)}
-                />
-              );
-            })}
-          </InsideDeploySkillsWrapper>
-        </DeploySkillsWrapper>
-      </NextSkillsWrapper>
+        <NextSkillsWrapper>
+          <InsideLeftSkillsCard hello={1}>
+            <InsideLeftSkillsWrapper>
+              <FrontSkillsWrapper>
+                <InsideFrontSkillsTitle>프론트엔드</InsideFrontSkillsTitle>
+                <InsideFrontSkillsWrapper>
+                  {frontData.map((skill: string, index) => {
+                    return (
+                      <SkillImg
+                        key={index}
+                        src={`/${skill}.png`}
+                        onClick={() => toggleFront(skill)}
+                      />
+                    );
+                  })}
+                </InsideFrontSkillsWrapper>
+              </FrontSkillsWrapper>
+              <BackSkillsWrapper>
+                <InsideBackSkillsTitle>백엔드</InsideBackSkillsTitle>
+                <InsideBackSkillsWrapper>
+                  {backData.map((skill: string, index) => {
+                    return (
+                      <SkillImg
+                        key={index}
+                        src={`/${skill}.png`}
+                        onClick={() => toggleBack(skill)}
+                      />
+                    );
+                  })}
+                </InsideBackSkillsWrapper>
+              </BackSkillsWrapper>
+            </InsideLeftSkillsWrapper>
+          </InsideLeftSkillsCard>
+          <InsideRightSkillsCard>
+            <InsideRightSkillsWrapper>
+              <VersionSkillsWrapper>
+                <InsideVersionSkillsTitle>버젼관리</InsideVersionSkillsTitle>
+                <InsideVersionSkillsWrapper>
+                  {versionData.map((skill: string, index) => {
+                    return (
+                      <SkillImg
+                        key={index}
+                        src={`/${skill}.png`}
+                        onClick={() => toggleVersion(skill)}
+                      />
+                    );
+                  })}
+                </InsideVersionSkillsWrapper>
+              </VersionSkillsWrapper>
+              <DeploySkillsWrapper>
+                <InsideDeploySkillsTitle>배포</InsideDeploySkillsTitle>
+                <InsideDeploySkillsWrapper>
+                  {deployData.map((skill: string, index) => {
+                    return (
+                      <SkillImg
+                        key={index}
+                        src={`/${skill}.png`}
+                        onClick={() => toggleDeploy(skill)}
+                      />
+                    );
+                  })}
+                </InsideDeploySkillsWrapper>
+              </DeploySkillsWrapper>
+            </InsideRightSkillsWrapper>
+          </InsideRightSkillsCard>
+        </NextSkillsWrapper>
+      </SkillsArea>
     </SkillsWrapper>
   );
 };

@@ -2,10 +2,18 @@ import styled, { css } from "styled-components";
 import Image from "next/image";
 import { glassStyle, insideTitleStyle, titleStyle } from "../GlobalStyle";
 
-const SkillImgStyle = css``;
+const insideLeftStyle = css`
+  width: 600px;
+  height: 600px;
+`;
+
+const insideRightStyle = css`
+  width: 700px;
+  height: 400px;
+`;
 export const SkillsWrapper = styled.div`
   width: 100vw;
-  height: 120vh;
+  height: 140vh;
   ${glassStyle};
   display: flex;
   flex-direction: column;
@@ -16,8 +24,8 @@ export const SkillsWrapper = styled.div`
 `;
 
 export const SkillsArea = styled.div`
-  max-width: 1900px;
-  max-height: 1500px;
+  width: 1700px;
+  height: 1300px;
   ${glassStyle};
   display: flex;
   flex-direction: column;
@@ -26,8 +34,10 @@ export const SkillsArea = styled.div`
 `;
 
 export const SkillImg = styled.img`
+  display: inline-block;
   padding: 20px;
   height: 60px;
+  -webkit-tap-highlight-color: transparent;
 
   ${glassStyle};
   margin: 15px;
@@ -36,59 +46,72 @@ export const SkillImg = styled.img`
   }
 `;
 
-export const PrevSkillsWrapper = styled.div`
-  max-width: 1000px;
-  max-height: 900px;
-  ${glassStyle};
+export const NextSkillsWrapper = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  margin-top: 100px;
-  padding: 0px 50px;
-
-  justify-content: space-around;
-  align-items: center;
+  width: 1600px;
+  height: 500px;
 `;
 
-export const InsidePrevSkillsWrapper = styled.div`
-  max-width: 1200px;
-  max-height: 600px;
+//왼쪽, 오른쪽 박스
+export const InsideLeftSkillsCard = styled.div`
+  ${insideLeftStyle}
+`;
+export const InsideRightSkillsCard = styled.div`
+  ${insideRightStyle}
+`;
 
-  padding: 50px;
+export const InsideLeftSkillsWrapper = styled.div`
+  ${insideLeftStyle}
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 2s ease;
+  &:hover {
+    transform: rotateY(180deg);
+    transition-delay: 1s;
+  }
+`;
+
+export const InsideRightSkillsWrapper = styled.div`
+  ${insideRightStyle}
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: all 2s ease;
+  &:hover {
+    transform: rotateY(180deg);
+    transition-delay: 1s;
+  }
+`;
+
+//선택 전 기술스택
+export const InsidePrevSkillsWrapper = styled.div`
+  max-width: 1500px;
+  max-height: 1000px;
+
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: -80px;
 `;
 
 export const InsidePrevSkillsTitle = styled.div`
   ${titleStyle}
   ${glassStyle};
-  margin-top: 30px;
 `;
 
-export const NextSkillsWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  width: 1600px;
-  height: 2000px;
-`;
-
+//프론트 기술스택
 export const FrontSkillsWrapper = styled.div`
-  max-width: 500px;
-  max-height: 1200px;
+  ${insideLeftStyle}
   ${glassStyle};
+  backdrop-filter: blur(0px);
+  backface-visibility: hidden;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   position: absolute;
-  top: 250px;
-  left: 150px;
-  padding: 20px;
 `;
 
 export const InsideFrontSkillsTitle = styled.div`
@@ -97,57 +120,53 @@ export const InsideFrontSkillsTitle = styled.div`
   margin: 30px;
 `;
 export const InsideFrontSkillsWrapper = styled.div`
-  max-width: 450px;
-  max-height: 850px;
-
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 `;
 
+//백엔드 기술스택
 export const BackSkillsWrapper = styled.div`
-  max-width: 500px;
-  max-height: 800px;
+  ${insideLeftStyle}
   ${glassStyle};
+  backdrop-filter: blur(0px);
+  backface-visibility: hidden;
   display: flex;
-  padding: 20px;
-
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
   position: absolute;
-  top: 250px;
-  right: 150px;
+
+  transform: rotateY(180deg);
 `;
 
 export const InsideBackSkillsTitle = styled.div`
   ${glassStyle};
   ${insideTitleStyle};
-  width: 300px;
+
   margin: 30px;
 `;
 export const InsideBackSkillsWrapper = styled.div`
-  max-width: 500px;
-  max-height: 600px;
-
   display: flex;
-
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 `;
+
+//버젼관리 기술스택
 export const VersionSkillsWrapper = styled.div`
-  max-width: 560px;
-  max-height: 340px;
-  ${glassStyle};
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  ${insideRightStyle}
+  flex-direction: column;
   position: absolute;
-  top: 620px;
-  left: 680px;
+
+  ${glassStyle};
+  backdrop-filter: blur(0px);
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const InsideVersionSkillsTitle = styled.div`
@@ -157,25 +176,27 @@ export const InsideVersionSkillsTitle = styled.div`
   margin: 30px;
 `;
 export const InsideVersionSkillsWrapper = styled.div`
-  padding: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 `;
+
+//배포 기술스택
 export const DeploySkillsWrapper = styled.div`
-  max-width: 300px;
-  max-height: 380px;
+  ${insideRightStyle}
+  flex-direction: column;
+  position: absolute;
 
   ${glassStyle};
+  backdrop-filter: blur(0px);
+  backface-visibility: hidden;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
-  position: absolute;
-  top: 600px;
-  right: 750px;
-  padding: 40px;
+  flex-direction: column;
+
+  transform: rotateY(180deg);
 `;
 
 export const InsideDeploySkillsTitle = styled.div`
@@ -184,7 +205,6 @@ export const InsideDeploySkillsTitle = styled.div`
   width: 300px;
 `;
 export const InsideDeploySkillsWrapper = styled.div`
-  padding: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
