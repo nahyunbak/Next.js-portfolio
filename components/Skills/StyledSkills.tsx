@@ -1,6 +1,12 @@
 import styled, { css } from "styled-components";
 import Image from "next/image";
-import { glassStyle, insideTitleStyle, titleStyle } from "../GlobalStyle";
+import {
+  glassStyle,
+  insideTitleStyle,
+  titleStyle,
+  verticalCenterStyle,
+} from "../GlobalStyle";
+import { EmptyType, NameType } from "../../dto";
 
 const insideLeftStyle = css`
   width: 600px;
@@ -11,21 +17,19 @@ const insideRightStyle = css`
   width: 700px;
   height: 400px;
 `;
-export const SkillsWrapper = styled.div`
+
+export const SkillsWrapper = styled.div<NameType>`
   width: 100vw;
   height: 140vh;
   ${glassStyle};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
+  ${verticalCenterStyle}
   background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%);
 `;
 
 export const SkillsArea = styled.div`
-  width: 1700px;
-  height: 1300px;
+  padding: 50px;
+  margin-top: 100px;
+
   ${glassStyle};
   display: flex;
   flex-direction: column;
@@ -46,7 +50,9 @@ export const SkillImg = styled.img`
   }
 `;
 
-export const NextSkillsWrapper = styled.div`
+export const NextSkillsWrapper = styled.div<EmptyType>`
+  padding-bottom: 50px;
+  margin-top: ${(props) => (props.ifEmpty ? "0px" : "100px")};
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -93,7 +99,7 @@ export const InsidePrevSkillsWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: -80px;
+  margin: 50px 0px;
 `;
 
 export const InsidePrevSkillsTitle = styled.div`

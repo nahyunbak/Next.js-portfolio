@@ -44,17 +44,20 @@ const Skills = () => {
     "git",
     "github",
   ]);
-  const [frontData, setFrontData] = useState([]);
-  const [backData, setBackData] = useState([]);
-  const [deployData, setDeployData] = useState([]);
-  const [versionData, setVersionData] = useState([]);
+  const [frontData, setFrontData] = useState<string[]>([]);
+  const [backData, setBackData] = useState<string[]>([]);
+  const [deployData, setDeployData] = useState<string[]>([]);
+  const [versionData, setVersionData] = useState<string[]>([]);
+  const [ifEmpty, setIfEmpty] = useState<boolean>(false);
   const frontSkills = ["html", "css", "js", "react", "next", "sass", "ts"];
   const backSkills = ["node", "express", "koa", "mongodb", "mysql", "nest"];
   const deploySkills = ["aws", "netlify"];
   const versionSkills = ["git", "github"];
-  const removeImg = (skill) => {
-    setSkillData((oldState) => oldState.filter((item) => item !== skill));
-    console.log(skillData);
+  const removeImg = (skill: string) => {
+    setSkillData((oldState: string[]) =>
+      oldState.filter((item) => item !== skill)
+    );
+
     if (frontSkills.includes(skill)) {
       setFrontData((oldState) => [...oldState, skill]);
     }
@@ -67,40 +70,72 @@ const Skills = () => {
     if (versionSkills.includes(skill)) {
       setVersionData((oldState) => [...oldState, skill]);
     }
+    console.log(skillData);
+    if (skillData.length === 1) {
+      setIfEmpty((oldState) => !oldState);
+    }
   };
 
-  const toggleFront = (skill) => {
-    setFrontData((oldState) => oldState.filter((item) => item !== skill));
-    setSkillData((oldState) => [...oldState, skill]);
-
-    console.log(skillData);
+  const toggleFront = (skill: string) => {
+    setFrontData((oldState: string[]) =>
+      oldState.filter((item) => item !== skill)
+    );
+    setSkillData((oldState: string[]) => [...oldState, skill]);
   };
 
-  const toggleBack = (skill) => {
-    setBackData((oldState) => oldState.filter((item) => item !== skill));
-    setSkillData((oldState) => [...oldState, skill]);
-
-    console.log(skillData);
+  const toggleBack = (skill: string) => {
+    setBackData((oldState: string[]) =>
+      oldState.filter((item) => item !== skill)
+    );
+    setSkillData((oldState: string[]) => [...oldState, skill]);
   };
 
-  const toggleDeploy = (skill) => {
-    setDeployData((oldState) => oldState.filter((item) => item !== skill));
-    setSkillData((oldState) => [...oldState, skill]);
-
-    console.log(skillData);
+  const toggleDeploy = (skill: string) => {
+    setDeployData((oldState: string[]) =>
+      oldState.filter((item) => item !== skill)
+    );
+    setSkillData((oldState: string[]) => [...oldState, skill]);
   };
 
-  const toggleVersion = (skill) => {
-    setVersionData((oldState) => oldState.filter((item) => item !== skill));
-    setSkillData((oldState) => [...oldState, skill]);
+  const toggleVersion = (skill: string) => {
+    setVersionData((oldState: string[]) =>
+      oldState.filter((item) => item !== skill)
+    );
+    setSkillData((oldState: string[]) => [...oldState, skill]);
+  };
 
-    console.log(skillData);
+  const toggleSkillsAll = () => {
+    setSkillData([]);
+    setFrontData(frontSkills);
+    setBackData(backSkills);
+    setVersionData(versionSkills);
+    setDeployData(deploySkills);
+  };
+
+  const toggleFrontAll = () => {
+    setSkillData((oldState: string[]) => oldState.concat(frontData));
+    setFrontData([]);
+  };
+
+  const toggleBackAll = () => {
+    setSkillData((oldState: string[]) => oldState.concat(backData));
+    setBackData([]);
+  };
+  const toggleVersionAll = () => {
+    setSkillData((oldState: string[]) => oldState.concat(versionData));
+    setVersionData([]);
+  };
+  const toggleDeployAll = () => {
+    setSkillData((oldState: string[]) => oldState.concat(deployData));
+    setDeployData([]);
   };
 
   return (
     <SkillsWrapper name="skills">
       <SkillsArea>
-        <InsidePrevSkillsTitle>SKILLS</InsidePrevSkillsTitle>
+        <InsidePrevSkillsTitle onClick={toggleSkillsAll}>
+          SKILLS
+        </InsidePrevSkillsTitle>
         <InsidePrevSkillsWrapper>
           {skillData.map((skill: string, index) => {
             return (
@@ -112,11 +147,13 @@ const Skills = () => {
             );
           })}
         </InsidePrevSkillsWrapper>
-        <NextSkillsWrapper>
-          <InsideLeftSkillsCard hello={1}>
+        <NextSkillsWrapper ifEmpty={ifEmpty}>
+          <InsideLeftSkillsCard>
             <InsideLeftSkillsWrapper>
               <FrontSkillsWrapper>
-                <InsideFrontSkillsTitle>프론트엔드</InsideFrontSkillsTitle>
+                <InsideFrontSkillsTitle onClick={toggleFrontAll}>
+                  프론트엔드
+                </InsideFrontSkillsTitle>
                 <InsideFrontSkillsWrapper>
                   {frontData.map((skill: string, index) => {
                     return (
@@ -130,7 +167,9 @@ const Skills = () => {
                 </InsideFrontSkillsWrapper>
               </FrontSkillsWrapper>
               <BackSkillsWrapper>
-                <InsideBackSkillsTitle>백엔드</InsideBackSkillsTitle>
+                <InsideBackSkillsTitle onClick={toggleBackAll}>
+                  백엔드
+                </InsideBackSkillsTitle>
                 <InsideBackSkillsWrapper>
                   {backData.map((skill: string, index) => {
                     return (
@@ -148,7 +187,9 @@ const Skills = () => {
           <InsideRightSkillsCard>
             <InsideRightSkillsWrapper>
               <VersionSkillsWrapper>
-                <InsideVersionSkillsTitle>버젼관리</InsideVersionSkillsTitle>
+                <InsideVersionSkillsTitle onClick={toggleVersionAll}>
+                  버젼관리
+                </InsideVersionSkillsTitle>
                 <InsideVersionSkillsWrapper>
                   {versionData.map((skill: string, index) => {
                     return (
@@ -162,7 +203,9 @@ const Skills = () => {
                 </InsideVersionSkillsWrapper>
               </VersionSkillsWrapper>
               <DeploySkillsWrapper>
-                <InsideDeploySkillsTitle>배포</InsideDeploySkillsTitle>
+                <InsideDeploySkillsTitle onClick={toggleDeployAll}>
+                  배포
+                </InsideDeploySkillsTitle>
                 <InsideDeploySkillsWrapper>
                   {deployData.map((skill: string, index) => {
                     return (

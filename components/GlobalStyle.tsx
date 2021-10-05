@@ -93,3 +93,12 @@ export const insideTitleStyle = css`
     letter-spacing: 5px;
   }
 `;
+
+//새로 중앙정렬
+
+export const verticalCenterStyle = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`;
