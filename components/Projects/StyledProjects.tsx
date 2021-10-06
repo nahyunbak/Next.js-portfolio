@@ -4,6 +4,8 @@ import { ImBlogger } from "react-icons/im";
 import { AiOutlineGithub } from "react-icons/ai";
 
 import { MdOutlinePageview } from "react-icons/md";
+
+import { GrNotes } from "react-icons/gr";
 import {
   glassStyle,
   horizontalCenterStyle,
@@ -18,6 +20,38 @@ const nestedProjectStyle = css`
   height: 100%auto;
   position: absolute;
   ${verticalCenterStyle}
+`;
+
+const linkStyle = css`
+  font-size: 2.5rem;
+  transition: 1s;
+  cursor: pointer;
+  @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+
+  &:hover {
+    color: white;
+    -webkit-animation: rotate-center 1s linear both;
+    animation: rotate-center 1s linear both;
+  }
 `;
 export const ProjectsWrapper = styled.div`
   display: flex;
@@ -40,12 +74,12 @@ export const CarouselWrapper = styled.div`
 `;
 
 export const CarouselLeft = styled(IoIosArrowBack)`
-  font-size: 2rem;
+  font-size: 3rem;
   color: white;
 `;
 
 export const CarouselRight = styled(IoIosArrowForward)`
-  font-size: 2rem;
+  font-size: 3rem;
   color: white;
 `;
 
@@ -87,18 +121,24 @@ export const ProjectsContents = styled.div`
 export const ProjectsImgWrapper = styled.div`
   ${verticalCenterStyle};
   width: 500px;
-  height: 600px;
+  height: 500px;
 `;
 
 export const ProjectsImg = styled.img`
-  width: 200px;
-  height: 200px;
-  padding: 20px;
+  height: 350px;
+  padding: 30px;
   ${glassStyle}
 `;
 
 export const ProjectsImgController = styled.div`
   ${horizontalCenterStyle};
+  width: 200px;
+  height: 50px;
+`;
+
+export const ProjectsImgNum = styled.div`
+  font-size: 1.3rem;
+  color: white;
 `;
 
 export const ProjectsImgLeft = styled(IoIosArrowBack)`
@@ -116,36 +156,54 @@ export const ProjectsTextWrapper = styled.div`
   width: 600px;
   height: 650px;
   ${glassStyle};
-  margin-top: 60px;
-  background: rgba(255, 255, 255, 0.3);
+  margin-top: 80px;
+  padding-bottom: 40px;
 `;
 
 export const ProjectsTextTitle = styled.div`
   ${insideTitleStyle};
 `;
 export const ProjectsIntroduction = styled.div`
-  width: 500px;
-  height: 450px;
-  font-size: 1.4rem;
+  width: 400px;
+  height: 320px;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 300;
+  color: white;
+  ${glassStyle}
+  padding: 30px;
+  margin-bottom: 120px;
 `;
 
+export const ProjectsStackWrapper = styled.div`
+  position: absolute;
+  left: 250px;
+  bottom: 90px;
+  width: 400px;
+  height: 50px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: black;
+`;
 export const ProjectsLinkWrapper = styled.div`
   width: 200px;
   height: 80px;
-  margin-left: 250px;
-  margin-bottom: 10px;
+  color: black;
   ${horizontalCenterStyle}
+  position: absolute;
+  left: 50px;
+  bottom: 60px;
 `;
 
 export const ProjectsGit = styled(AiOutlineGithub)`
-  font-size: 3rem;
+  ${linkStyle}
 `;
-export const ProjectsVelog = styled(ImBlogger)`
-  font-size: 3rem;
+export const ProjectsVelog = styled(GrNotes)`
+  ${linkStyle}
 `;
 
 export const ProjectsDeploy = styled(MdOutlinePageview)`
-  font-size: 3rem;
+  ${linkStyle}
 `;
 export const CarouselController = styled.div`
   width: 800px;
