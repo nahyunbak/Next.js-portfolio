@@ -9,3 +9,7 @@ export type EmptyType = {
 export type ClickedType = {
   value?: boolean;
 };
+
+export type NumType = {
+  pageNum?: number;
+};

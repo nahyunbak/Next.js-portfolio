@@ -84,7 +84,7 @@ export const insideTitleStyle = css`
   height: 80px;
   margin: 30px;
   background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-
+  border-radius: 20px;
   transition: 0.5s;
   &:hover {
     transform: scale(1.1);

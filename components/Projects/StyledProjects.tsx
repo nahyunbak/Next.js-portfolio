@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { ImBlogger } from "react-icons/im";
 import { AiOutlineGithub } from "react-icons/ai";
@@ -11,7 +11,14 @@ import {
   titleStyle,
   verticalCenterStyle,
 } from "../GlobalStyle";
+import { NumType } from "../../dto";
 
+const nestedProjectStyle = css`
+  width: 100%auto;
+  height: 100%auto;
+  position: absolute;
+  ${verticalCenterStyle}
+`;
 export const ProjectsWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -51,11 +58,19 @@ export const CarouselArea = styled.div`
   align-items: center;
 `;
 
-export const NestedProjectArea = styled.div`
-  width: 100%auto;
-  height: 100%auto;
-  position: absolute;
-  ${verticalCenterStyle}
+export const NestedProjectAreaA = styled.div<NumType>`
+  ${nestedProjectStyle}
+  display: ${(props) => (props.pageNum === 1 ? "flex" : "none")};
+`;
+
+export const NestedProjectAreaB = styled.div<NumType>`
+  ${nestedProjectStyle}
+  display: ${(props) => (props.pageNum === 2 ? "flex" : "none")};
+`;
+
+export const NestedProjectAreaC = styled.div<NumType>`
+  ${nestedProjectStyle}
+  display: ${(props) => (props.pageNum === 3 ? "flex" : "none")};
 `;
 
 export const ProjectTitle = styled.div`
@@ -76,8 +91,8 @@ export const ProjectsImgWrapper = styled.div`
 `;
 
 export const ProjectsImg = styled.img`
-  width: 500px;
-  height: 500px;
+  width: 200px;
+  height: 200px;
   padding: 20px;
   ${glassStyle}
 `;
@@ -98,29 +113,39 @@ export const ProjectsImgRight = styled(IoIosArrowForward)`
 
 export const ProjectsTextWrapper = styled.div`
   ${verticalCenterStyle};
-  width: 500px;
-  height: 900px;
+  width: 600px;
+  height: 650px;
+  ${glassStyle};
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.3);
 `;
 
+export const ProjectsTextTitle = styled.div`
+  ${insideTitleStyle};
+`;
 export const ProjectsIntroduction = styled.div`
-  width: 700px;
-  height: 600px;
+  width: 500px;
+  height: 450px;
+  font-size: 1.4rem;
 `;
 
 export const ProjectsLinkWrapper = styled.div`
-  width: 500px;
-  height: 300px;
+  width: 200px;
+  height: 80px;
+  margin-left: 250px;
+  margin-bottom: 10px;
+  ${horizontalCenterStyle}
 `;
 
 export const ProjectsGit = styled(AiOutlineGithub)`
-  font-size: 2rem;
+  font-size: 3rem;
 `;
 export const ProjectsVelog = styled(ImBlogger)`
-  font-size: 2rem;
+  font-size: 3rem;
 `;
 
 export const ProjectsDeploy = styled(MdOutlinePageview)`
-  font-size: 2rem;
+  font-size: 3rem;
 `;
 export const CarouselController = styled.div`
   width: 800px;
