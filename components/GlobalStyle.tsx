@@ -57,6 +57,7 @@ export const titleStyle = css`
   color: #363636;
   width: 600px;
   height: 100px;
+  border-radius: 20px;
 
   background-image: linear-gradient(
     to top,
@@ -96,6 +97,14 @@ export const insideTitleStyle = css`
 export const verticalCenterStyle = css`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+//가로 중앙정렬
+
+export const horizontalCenterStyle = css`
+  display: flex;
   justify-content: space-around;
   align-items: center;
 `;

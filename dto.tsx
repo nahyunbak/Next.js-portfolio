@@ -5,3 +5,7 @@ export type NameType = {
 export type EmptyType = {
   ifEmpty?: boolean; ///Passing Optional Props
 };
+
+export type ClickedType = {
+  value?: boolean;
+};

@@ -164,7 +164,6 @@ export const BackCard = styled.div`
   ${glassStyle}
   backdrop-filter: blur(0px);
   backface-visibility: hidden;
-
   display: flex;
   flex-direction: column;
   justify-content: center;

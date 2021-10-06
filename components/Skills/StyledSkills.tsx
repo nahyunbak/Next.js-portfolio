@@ -2,11 +2,12 @@ import styled, { css } from "styled-components";
 import Image from "next/image";
 import {
   glassStyle,
+  horizontalCenterStyle,
   insideTitleStyle,
   titleStyle,
   verticalCenterStyle,
 } from "../GlobalStyle";
-import { EmptyType, NameType } from "../../dto";
+import { ClickedType, EmptyType, NameType } from "../../dto";
 
 const insideLeftStyle = css`
   width: 600px;
@@ -28,19 +29,14 @@ export const SkillsWrapper = styled.div<NameType>`
 
 export const SkillsArea = styled.div`
   padding: 50px;
-
   ${glassStyle};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  ${verticalCenterStyle};
 `;
 
 export const SkillImg = styled.img`
   display: inline-block;
   padding: 20px;
   height: 60px;
-
   ${glassStyle};
   -webkit-tap-highlight-color: transparent;
   margin: 15px;
@@ -52,9 +48,7 @@ export const SkillImg = styled.img`
 export const NextSkillsWrapper = styled.div<EmptyType>`
   padding-bottom: 50px;
   margin-top: ${(props) => (props.ifEmpty ? "0px" : "100px")};
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  ${horizontalCenterStyle};
   width: 1600px;
   height: 500px;
 `;
@@ -67,26 +61,21 @@ export const InsideRightSkillsCard = styled.div`
   ${insideRightStyle}
 `;
 
-export const InsideLeftSkillsWrapper = styled.div`
+export const InsideLeftSkillsWrapper = styled.div<ClickedType>`
   ${insideLeftStyle}
   position: absolute;
   transform-style: preserve-3d;
   transition: all 2s ease;
-  &:hover {
-    transform: rotateY(180deg);
-    transition-delay: 1s;
-  }
+
+  transform: ${(props) => (props.value ? "rotateY(180deg)" : "rotateY(0deg)")};
 `;
 
-export const InsideRightSkillsWrapper = styled.div`
+export const InsideRightSkillsWrapper = styled.div<ClickedType>`
   ${insideRightStyle}
   position: absolute;
   transform-style: preserve-3d;
   transition: all 2s ease;
-  &:hover {
-    transform: rotateY(180deg);
-    transition-delay: 1s;
-  }
+  transform: ${(props) => (props.value ? "rotateY(180deg)" : "rotateY(0deg)")};
 `;
 
 //선택 전 기술스택
@@ -123,9 +112,7 @@ export const InsideFrontSkillsTitle = styled.div`
   ${insideTitleStyle}
 `;
 export const InsideFrontSkillsWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  ${horizontalCenterStyle}
   flex-wrap: wrap;
 `;
 
@@ -176,9 +163,7 @@ export const InsideVersionSkillsTitle = styled.div`
   width: 300px;
 `;
 export const InsideVersionSkillsWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  ${horizontalCenterStyle}
   flex-wrap: wrap;
 `;
 

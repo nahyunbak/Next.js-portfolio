@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import {
   BackSkillsWrapper,
   DeploySkillsWrapper,
@@ -51,10 +51,14 @@ const Skills = () => {
   const [deployData, setDeployData] = useState<string[]>([]);
   const [versionData, setVersionData] = useState<string[]>([]);
   const [ifEmpty, setIfEmpty] = useState<boolean>(false);
+  const [ifClickedLeft, setIfClickedLeft] = useState<boolean>(false);
+  const [ifClickedRight, setIfClickedRight] = useState<boolean>(false);
+
   const frontSkills = ["html", "css", "js", "react", "next", "sass", "ts"];
   const backSkills = ["node", "express", "koa", "mongodb", "mysql", "nest"];
   const deploySkills = ["aws", "netlify"];
   const versionSkills = ["git", "github"];
+
   const removeImg = (skill: string) => {
     setSkillData((oldState: string[]) =>
       oldState.filter((item) => item !== skill)
@@ -78,32 +82,36 @@ const Skills = () => {
     }
   };
 
-  const toggleFront = (skill: string) => {
+  const toggleFront = (skill: string, e) => {
     setFrontData((oldState: string[]) =>
       oldState.filter((item) => item !== skill)
     );
     setSkillData((oldState: string[]) => [...oldState, skill]);
+    e.stopPropagation();
   };
 
-  const toggleBack = (skill: string) => {
+  const toggleBack = (skill: string, e) => {
     setBackData((oldState: string[]) =>
       oldState.filter((item) => item !== skill)
     );
     setSkillData((oldState: string[]) => [...oldState, skill]);
+    e.stopPropagation();
   };
 
-  const toggleDeploy = (skill: string) => {
+  const toggleDeploy = (skill: string, e) => {
     setDeployData((oldState: string[]) =>
       oldState.filter((item) => item !== skill)
     );
     setSkillData((oldState: string[]) => [...oldState, skill]);
+    e.stopPropagation();
   };
 
-  const toggleVersion = (skill: string) => {
+  const toggleVersion = (skill: string, e) => {
     setVersionData((oldState: string[]) =>
       oldState.filter((item) => item !== skill)
     );
     setSkillData((oldState: string[]) => [...oldState, skill]);
+    e.stopPropagation();
   };
 
   const toggleSkillsAll = () => {
@@ -114,7 +122,9 @@ const Skills = () => {
     setDeployData(deploySkills);
   };
 
-  const toggleFrontAll = () => {
+  const toggleFrontAll = (
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>
+  ) => {
     if (frontData.length !== 0) {
       setSkillData((oldState: string[]) => oldState.concat(frontData));
       setFrontData([]);
@@ -125,9 +135,10 @@ const Skills = () => {
         oldState.filter((item) => !frontSkills.includes(item))
       );
     }
+    e.stopPropagation();
   };
 
-  const toggleBackAll = () => {
+  const toggleBackAll = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
     if (backData.length !== 0) {
       setSkillData((oldState: string[]) => oldState.concat(backData));
       setBackData([]);
@@ -138,8 +149,11 @@ const Skills = () => {
         oldState.filter((item) => !backSkills.includes(item))
       );
     }
+    e.stopPropagation();
   };
-  const toggleVersionAll = () => {
+  const toggleVersionAll = (
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>
+  ) => {
     if (versionData.length !== 0) {
       setSkillData((oldState: string[]) => oldState.concat(versionData));
       setVersionData([]);
@@ -150,8 +164,11 @@ const Skills = () => {
         oldState.filter((item) => !versionSkills.includes(item))
       );
     }
+    e.stopPropagation();
   };
-  const toggleDeployAll = () => {
+  const toggleDeployAll = (
+    e: React.MouseEvent<HTMLImageElement, MouseEvent>
+  ) => {
     if (deployData.length !== 0) {
       setSkillData((oldState: string[]) => oldState.concat(deployData));
       setDeployData([]);
@@ -162,6 +179,15 @@ const Skills = () => {
         oldState.filter((item) => !deploySkills.includes(item))
       );
     }
+    e.stopPropagation();
+  };
+
+  const flipLeftCard = () => {
+    setIfClickedLeft((oldState: boolean) => !oldState);
+  };
+
+  const flipRightCard = () => {
+    setIfClickedRight((oldState: boolean) => !oldState);
   };
 
   return (
@@ -187,7 +213,10 @@ const Skills = () => {
         <NextSkillsWrapper ifEmpty={ifEmpty}>
           <Tilt>
             <InsideLeftSkillsCard>
-              <InsideLeftSkillsWrapper>
+              <InsideLeftSkillsWrapper
+                onClick={flipLeftCard}
+                value={ifClickedLeft}
+              >
                 <FrontSkillsWrapper>
                   <InsideFrontSkillsTitle onClick={toggleFrontAll}>
                     프론트엔드
@@ -198,7 +227,7 @@ const Skills = () => {
                         <Tilt key={index}>
                           <SkillImg
                             src={`/${skill}.png`}
-                            onClick={() => toggleFront(skill)}
+                            onClick={(e) => toggleFront(skill, e)}
                           />
                         </Tilt>
                       );
@@ -215,7 +244,7 @@ const Skills = () => {
                         <Tilt key={index}>
                           <SkillImg
                             src={`/${skill}.png`}
-                            onClick={() => toggleBack(skill)}
+                            onClick={(e) => toggleBack(skill, e)}
                           />
                         </Tilt>
                       );
@@ -227,7 +256,10 @@ const Skills = () => {
           </Tilt>
           <Tilt>
             <InsideRightSkillsCard>
-              <InsideRightSkillsWrapper>
+              <InsideRightSkillsWrapper
+                onClick={flipRightCard}
+                value={ifClickedRight}
+              >
                 <VersionSkillsWrapper>
                   <InsideVersionSkillsTitle onClick={toggleVersionAll}>
                     버젼관리
@@ -239,7 +271,7 @@ const Skills = () => {
                           <SkillImg
                             key={index}
                             src={`/${skill}.png`}
-                            onClick={() => toggleVersion(skill)}
+                            onClick={(e) => toggleVersion(skill, e)}
                           />
                         </Tilt>
                       );
@@ -257,7 +289,7 @@ const Skills = () => {
                           <SkillImg
                             key={index}
                             src={`/${skill}.png`}
-                            onClick={() => toggleDeploy(skill)}
+                            onClick={(e) => toggleDeploy(skill, e)}
                           />
                         </Tilt>
                       );
