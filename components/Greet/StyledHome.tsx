@@ -4,7 +4,7 @@ import { cardIconStyle, glassStyle, removeLiDeco } from "../GlobalStyle";
 
 export const HomeWrapper = styled.div`
   width: 100vw;
-  height: 140vh;
+  height: 110vh;
   background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   display: flex;
   justify-content: center;

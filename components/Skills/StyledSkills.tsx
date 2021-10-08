@@ -21,10 +21,10 @@ const insideRightStyle = css`
 
 export const SkillsWrapper = styled.div<NameType>`
   width: 100vw;
-  height: 140vh;
+  height: 120vh;
   ${glassStyle};
   ${verticalCenterStyle}
-  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
 `;
 
 export const SkillsArea = styled.div`

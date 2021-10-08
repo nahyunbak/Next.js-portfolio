@@ -5,7 +5,7 @@ import { AiOutlineGithub, AiTwotoneBulb } from "react-icons/ai";
 import { RiPagesFill } from "react-icons/ri";
 
 import LinkN from "next/link";
-import { GrNotes } from "react-icons/gr";
+
 import {
   glassStyle,
   horizontalCenterStyle,
@@ -58,18 +58,19 @@ export const ProjectsWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 130vh;
+  height: 95vh;
   background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
+  padding-top: 140px;
 `;
 
 export const ProjectsArea = styled.div`
   width: 1800px;
-  height: 1200px;
+  height: 1100px;
 `;
 
 export const CarouselWrapper = styled.div`
   width: 1800px;
-  height: 1000px;
+  height: 900px;
   ${horizontalCenterStyle}
 `;
 
