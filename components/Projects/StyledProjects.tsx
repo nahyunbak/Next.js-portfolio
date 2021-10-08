@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { ImBlogger } from "react-icons/im";
-import { AiOutlineGithub } from "react-icons/ai";
 
-import { MdOutlinePageview } from "react-icons/md";
+import { AiOutlineGithub, AiTwotoneBulb } from "react-icons/ai";
+import { RiPagesFill } from "react-icons/ri";
 
+import LinkN from "next/link";
 import { GrNotes } from "react-icons/gr";
 import {
   glassStyle,
@@ -198,11 +198,11 @@ export const ProjectsLinkWrapper = styled.div`
 export const ProjectsGit = styled(AiOutlineGithub)`
   ${linkStyle}
 `;
-export const ProjectsVelog = styled(GrNotes)`
+export const ProjectsVelog = styled(AiTwotoneBulb)`
   ${linkStyle}
 `;
 
-export const ProjectsDeploy = styled(MdOutlinePageview)`
+export const ProjectsDeploy = styled(RiPagesFill)`
   ${linkStyle}
 `;
 export const CarouselController = styled.div`
@@ -215,55 +215,7 @@ export const CarouselDot = styled.div`
   height: 4px;
   border-radius: 50%;
 `;
-/**
- * 
- * 
- * 
-const Projects = () => {
-  return (
-    <>
-      <ProjectsWrapper>
-        <ProjectsArea>
-          <CarouselWrapper>
-            <CarouselLeft />
-            <CarouselArea>
-              <NestedProjectArea>
-                <ProjectTitle></ProjectTitle>
-                <ProjectsContents>
-                  <ProjectsImgWrapper>
-                    <ProjectsImg />
-                    <ProjectsImgController>
-                      <ProjectsImgLeft />
-                      <ProjectsImgRight />
-                    </ProjectsImgController>
-                  </ProjectsImgWrapper>
-                  <ProjectsTextWrapper>
-                    <ProjectsIntroduction></ProjectsIntroduction>
-                    <ProjectsLinkWrapper>
-                      <ProjectsGit></ProjectsGit>
-                      <ProjectsVelog></ProjectsVelog>
-                      <ProjectsDeploy></ProjectsDeploy>
-                    </ProjectsLinkWrapper>
-                  </ProjectsTextWrapper>
-                </ProjectsContents>
-              </NestedProjectArea>
-            </CarouselArea>
-            <CarouselRight />
-          </CarouselWrapper>
-          <CarouselController>
-            <CarouselDot />
-            <CarouselDot />
-            <CarouselDot />
-            <CarouselDot />
-          </CarouselController>
-        </ProjectsArea>
-      </ProjectsWrapper>
-    </>
-  );
-};
 
-export default Projects;
-
-    
-  );
- */
+export const ProjectsLink = styled(LinkN)`
+  text-decoration: none;
+`;

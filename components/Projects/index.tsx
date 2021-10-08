@@ -20,6 +20,7 @@ import {
   ProjectsImgRight,
   ProjectsImgWrapper,
   ProjectsIntroduction,
+  ProjectsLink,
   ProjectsLinkWrapper,
   ProjectsStackWrapper,
   ProjectsTextTitle,
@@ -138,9 +139,15 @@ const Projects = () => {
                       <br />✔ 배포: Vercel
                     </ProjectsStackWrapper>
                     <ProjectsLinkWrapper>
-                      <ProjectsGit></ProjectsGit>
-                      <ProjectsVelog></ProjectsVelog>
-                      <ProjectsDeploy></ProjectsDeploy>
+                      <ProjectsLink href="https://github.com/nahyunbak/Next.js-portfolio">
+                        <ProjectsGit />
+                      </ProjectsLink>
+                      <ProjectsLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
+                        <ProjectsVelog />
+                      </ProjectsLink>
+                      <ProjectsLink href="www.nahyunbak.me">
+                        <ProjectsDeploy />
+                      </ProjectsLink>
                     </ProjectsLinkWrapper>
                   </ProjectsTextWrapper>
                 </ProjectsContents>
@@ -191,13 +198,39 @@ const Projects = () => {
                     </ProjectsImgController>
                   </ProjectsImgWrapper>
                   <ProjectsTextWrapper>
-                    <ProjectsTextTitle>글쓰기 앱 백엔드</ProjectsTextTitle>
-
-                    <ProjectsIntroduction></ProjectsIntroduction>
+                    <ProjectsTextTitle>개인 포트폴리오(구)</ProjectsTextTitle>
+                    <ProjectsIntroduction>
+                      발레를 테마로 제작한 개인 포트폴리오입니다. React.js와
+                      Redux로 제작했습니다.
+                      <br />
+                      <br />
+                      리액트와 리덕스 툴킷을 사용하여 만든 첫 포트폴리오라는
+                      점에서 의미가 깊습니다.
+                      <br />
+                      <br />
+                      다만 단순한 디자인, 정적인 interaction, 렌더링 속도를
+                      고려하지 않은 코드 등 부족한 부분이 점점 크게
+                      느껴졌습니다. 동시에 직관적인 SEO와 상태관리를 향한 열망도
+                      커졌습니다.
+                      <br />
+                      <br />
+                      하여 현재의 포트폴리오 사이트를 새로 제작하게 되었습니다.
+                    </ProjectsIntroduction>
+                    <ProjectsStackWrapper>
+                      <br />✔ 사용 기술: JS, React.js, Redux.js
+                      <br />
+                      <br />✔ 배포: Netlify
+                    </ProjectsStackWrapper>
                     <ProjectsLinkWrapper>
-                      <ProjectsGit></ProjectsGit>
-                      <ProjectsVelog></ProjectsVelog>
-                      <ProjectsDeploy></ProjectsDeploy>
+                      <ProjectsLink href="https://github.com/nahyunbak/react-portfolio-ballet">
+                        <ProjectsGit />
+                      </ProjectsLink>
+                      <ProjectsLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
+                        <ProjectsVelog />
+                      </ProjectsLink>
+                      <ProjectsLink href="https://silly-meninsky-e1fc3e.netlify.app/">
+                        <ProjectsDeploy />
+                      </ProjectsLink>
                     </ProjectsLinkWrapper>
                   </ProjectsTextWrapper>
                 </ProjectsContents>
@@ -206,31 +239,67 @@ const Projects = () => {
                 <ProjectTitle>PROJECTS</ProjectTitle>
                 <ProjectsContents>
                   <ProjectsImgWrapper>
-                    <ProjectsImg src={`/next.png`} />
+                    {portfolioImgNum === 1 ? (
+                      <ProjectsImg src={`/projects/portfolioC1.jpg`} />
+                    ) : (
+                      ""
+                    )}
+                    {portfolioImgNum === 2 ? (
+                      <ProjectsImg src={`/projects/portfolioC2.jpg`} />
+                    ) : (
+                      ""
+                    )}
+
                     <ProjectsImgController>
                       <ProjectsImgLeft
                         onClick={(e) => {
-                          decreasePortfolioImg(maxNumA);
+                          decreasePortfolioImg(maxNumC);
                         }}
                       />
                       <ProjectsImgNum>
-                        {portfolioImgNum} / {maxNumB}
+                        {portfolioImgNum} / {maxNumC}
                       </ProjectsImgNum>
                       <ProjectsImgRight
                         onClick={(e) => {
-                          increasePortfolioImg(maxNumA);
+                          increasePortfolioImg(maxNumC);
                         }}
                       />
                     </ProjectsImgController>
                   </ProjectsImgWrapper>
                   <ProjectsTextWrapper>
-                    <ProjectsTextTitle>글쓰기 앱 백엔드</ProjectsTextTitle>
-
-                    <ProjectsIntroduction></ProjectsIntroduction>
+                    <ProjectsTextTitle>글쓰기 앱(백엔드)</ProjectsTextTitle>
+                    <ProjectsIntroduction>
+                      <br />
+                      글쓰기 앱의 백엔드를 구현한 프로젝트입니다. Nest.js와
+                      MongoDB를 사용하여 제작했습니다.
+                      <br />
+                      <br />
+                      Nest.js와 TS, 공식문서에 익숙해진 계기가 된
+                      프로젝트였습니다.
+                      <br />
+                      <br /> 다만 관계가 중시되는 데이터를 처리하는 데 MongoDB를
+                      사용했다는 점, guard 등 기능 이해가 미흡하다는 점에서
+                      아쉬움이 남습니다.
+                      <br />
+                      <br />
+                      조만간 RDBMS와 다양한 인증 전략을 사용하여 TDD방식으로
+                      다시 개발하고자 합니다.
+                    </ProjectsIntroduction>
+                    <ProjectsStackWrapper>
+                      <br />✔ 사용 기술: Nest.js, MongoDB
+                      <br />
+                      <br />✔ 배포: AWS EC2, Linux, NGINX
+                    </ProjectsStackWrapper>
                     <ProjectsLinkWrapper>
-                      <ProjectsGit></ProjectsGit>
-                      <ProjectsVelog></ProjectsVelog>
-                      <ProjectsDeploy></ProjectsDeploy>
+                      <ProjectsLink href="https://github.com/nahyunbak/nestjs-writingapp-backend">
+                        <ProjectsGit />
+                      </ProjectsLink>
+                      <ProjectsLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
+                        <ProjectsVelog />
+                      </ProjectsLink>
+                      <ProjectsLink href="silly-meninsky-e1fc3e.netlify.app">
+                        <ProjectsDeploy />
+                      </ProjectsLink>
                     </ProjectsLinkWrapper>
                   </ProjectsTextWrapper>
                 </ProjectsContents>
