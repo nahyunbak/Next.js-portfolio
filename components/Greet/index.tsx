@@ -24,7 +24,7 @@ import Tilt from "react-parallax-tilt";
 
 const Greet = () => {
   return (
-    <HomeWrapper>
+    <HomeWrapper name="greet">
       <HomeContentsWrapper>
         <HomeTextWrapper>
           <HomeTitleArea>

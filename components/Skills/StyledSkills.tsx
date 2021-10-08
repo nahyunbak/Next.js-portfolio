@@ -21,7 +21,7 @@ const insideRightStyle = css`
 
 export const SkillsWrapper = styled.div<NameType>`
   width: 100vw;
-  height: 120vh;
+  height: 130vh;
   ${glassStyle};
   ${verticalCenterStyle}
   background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
@@ -65,7 +65,7 @@ export const InsideLeftSkillsWrapper = styled.div<ClickedType>`
   ${insideLeftStyle}
   position: absolute;
   transform-style: preserve-3d;
-  transition: all 2s ease;
+  transition: all 1s ease;
 
   transform: ${(props) => (props.value ? "rotateY(180deg)" : "rotateY(0deg)")};
 `;
@@ -74,7 +74,7 @@ export const InsideRightSkillsWrapper = styled.div<ClickedType>`
   ${insideRightStyle}
   position: absolute;
   transform-style: preserve-3d;
-  transition: all 2s ease;
+  transition: all 1s ease;
   transform: ${(props) => (props.value ? "rotateY(180deg)" : "rotateY(0deg)")};
 `;
 
@@ -196,69 +196,3 @@ export const InsideDeploySkillsWrapper = styled.div`
   align-items: center;
   flex-wrap: wrap;
 `;
-
-/**
- * 
-  return (
-
-    <SkillsWrapper>
-        <PrevSkillsWrapper>
-        {skillData.map((skill: string, index) => {
-          return (
-            <SkillImg
-              key={index}
-              src={`/${skill}.png`}
-              onClick={() => removeImg(skill)}
-            />
-          );
-        })}
-        </PrevSkillsWrapper>
-        <NextSkillsWrapper>
-            <FrontSkillsWrapper>
-            
-      {frontData.map((skill: string, index) => {
-        return (
-            <SkillImg
-            key={index}
-            src={`/${skill}.png`}
-            onClick={() => toggleFront(skill)}
-          />
-        );
-      })}
-            </FrontSkillsWrapper>
-            <BackSkillsWrapper>
-            
-        {backData.map((skill: string, index) => {
-          return (
-            <SkillImg
-              key={index}
-              src={`/${skill}.png`}
-              onClick={() => toggleBack(skill)}
-            />
-          );
-        })}
-            </BackSkillsWrapper>
-            <DeploySkillsWrapper>
-                
-        {backData.map((skill: string, index) => {
-          return (
-            <SkillImg
-              key={index}
-              src={`/${skill}.png`}
-              onClick={() => toggleBack(skill)}
-            />
-          );
-        })}
-            </<DeploySkillsWrapper>
-            <VersionSkillsWrapper>
-            <SkillImg/>
-            </<VersionSkillsWrapper>
-        </NextSkillsWrapper>
-    </SkillsWrapper>
-   
-    </>
-  );
-};
-
- * 
- */

@@ -15,14 +15,22 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <MenuWrapper>
-        <TitleWrapper>
-          <LogoImg src="/logo.png"></LogoImg>
-          <TitleArea>박나현의 포트폴리오</TitleArea>
-        </TitleWrapper>
+        <LiWrapper
+          to="greet"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          <TitleWrapper>
+            <LogoImg src="/logo.png"></LogoImg>
+            <TitleArea>박나현의 포트폴리오</TitleArea>
+          </TitleWrapper>
+        </LiWrapper>
         <NavWrapper>
           <ItemWrapper>
             <LiWrapper
-              to="aboutme"
+              to="greet"
               spy={true}
               smooth={true}
               offset={0}
@@ -49,7 +57,7 @@ const Header = () => {
               Skills
             </LiWrapper>
             <LiWrapper
-              to="aboutme"
+              to="projects"
               spy={true}
               smooth={true}
               offset={0}

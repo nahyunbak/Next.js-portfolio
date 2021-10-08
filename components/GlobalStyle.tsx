@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 
+import LinkN from "next/link";
 export const BodyWrapper = styled.div`
   width: 100vw;
   height: 140vh;
@@ -111,3 +112,6 @@ export const horizontalCenterStyle = css`
 
 //링크
 
+export const GlobalLink = styled(LinkN)`
+  text-decoration: none;
+`;

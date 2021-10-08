@@ -13,7 +13,7 @@ import {
   titleStyle,
   verticalCenterStyle,
 } from "../GlobalStyle";
-import { NumType } from "../../dto";
+import { NameType, NumType } from "../../dto";
 
 const nestedProjectStyle = css`
   width: 100%auto;
@@ -53,7 +53,7 @@ const linkStyle = css`
     animation: rotate-center 1s linear both;
   }
 `;
-export const ProjectsWrapper = styled.div`
+export const ProjectsWrapper = styled.div<NameType>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,6 +66,7 @@ export const ProjectsWrapper = styled.div`
 export const ProjectsArea = styled.div`
   width: 1800px;
   height: 1100px;
+  ${verticalCenterStyle}
 `;
 
 export const CarouselWrapper = styled.div`
@@ -207,14 +208,17 @@ export const ProjectsDeploy = styled(RiPagesFill)`
   ${linkStyle}
 `;
 export const CarouselController = styled.div`
-  width: 800px;
+  width: 150px;
   height: 200px;
+  ${horizontalCenterStyle}
 `;
 
 export const CarouselDot = styled.div`
-  width: 4px;
-  height: 4px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
+  background-color: #ffffffcc;
+  cursor: pointer;
 `;
 
 export const ProjectsLink = styled(LinkN)`

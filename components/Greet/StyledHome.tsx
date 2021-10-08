@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { AiTwotoneMail } from "react-icons/ai";
 import { cardIconStyle, glassStyle, removeLiDeco } from "../GlobalStyle";
+import { NameType } from "../../dto";
 
-export const HomeWrapper = styled.div`
+export const HomeWrapper = styled.div<NameType>`
   width: 100vw;
-  height: 110vh;
+  height: 120vh;
   background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   display: flex;
   justify-content: center;
