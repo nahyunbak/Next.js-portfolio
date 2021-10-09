@@ -18,6 +18,7 @@
     "react-parallax-tilt": "^1.5.67",
     "react-scroll": "^1.8.4",
     "react-scroll-parallax": "^2.4.0",
+    "recoil": "^0.4.1",
     "styled-components": "^5.3.1",
     "swr": "^1.0.1"
   },

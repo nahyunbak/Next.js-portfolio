@@ -13,19 +13,23 @@ import { ParallaxProvider } from "react-scroll-parallax";
 import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 
+import { RecoilRoot } from "recoil";
+
 export default function Home() {
   return (
     <>
-      <ParallaxProvider>
-        <Header />
-        <Greet />
-        <Obj1></Obj1>
-        <Obj2></Obj2>
-        <About />
-        <Skills />
-        <Projects />
-        <Footer />
-      </ParallaxProvider>
+      <RecoilRoot>
+        <ParallaxProvider>
+          <Header />
+          <Greet />
+          <Obj1></Obj1>
+          <Obj2></Obj2>
+          <About />
+          <Skills />
+          <Projects />
+          <Footer />
+        </ParallaxProvider>
+      </RecoilRoot>
     </>
   );
 }

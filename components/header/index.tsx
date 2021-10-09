@@ -1,3 +1,6 @@
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { LanType } from "../../dto";
+import { englishState, koreanState, lanState } from "../../recoilAtom/language";
 import {
   HeaderWrapper,
   ItemWrapper,
@@ -12,6 +15,16 @@ import {
 } from "./StyledHeader";
 
 const Header = () => {
+  const setLanList = useSetRecoilState(lanState);
+  const lanList = useRecoilValue(lanState);
+  const switchlan = () => {
+    if (lanList.mainTitle === "박나현의 포트폴리오") {
+      setLanList(englishState);
+    } else {
+      setLanList(koreanState);
+    }
+  };
+
   return (
     <HeaderWrapper>
       <MenuWrapper>
@@ -24,7 +37,7 @@ const Header = () => {
         >
           <TitleWrapper>
             <LogoImg src="/logo.png"></LogoImg>
-            <TitleArea>박나현의 포트폴리오</TitleArea>
+            <TitleArea>{lanList.mainTitle}</TitleArea>
           </TitleWrapper>
         </LiWrapper>
         <NavWrapper>
@@ -68,7 +81,9 @@ const Header = () => {
             </LiWrapper>
           </ItemWrapper>
 
-          <LanguageButton>영어로 보기</LanguageButton>
+          <LanguageButton onClick={switchlan}>
+            {lanList.lanButton}
+          </LanguageButton>
         </NavWrapper>
       </MenuWrapper>
     </HeaderWrapper>

@@ -20,8 +20,11 @@ import {
 import Tilt from "react-parallax-tilt";
 import { Parallax } from "react-scroll-parallax";
 import { useEffect } from "react";
+import { useRecoilValue } from "recoil";
+import { lanState } from "../../recoilAtom/language";
 
 const About = () => {
+  const lanList = useRecoilValue(lanState);
   return (
     <AboutWrapper name="aboutme">
       <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
@@ -34,36 +37,35 @@ const About = () => {
               <AboutNameCardWrapper>
                 <AboutIconName />
 
-                <AboutText>박나현</AboutText>
+                <AboutText>{lanList.about.name}</AboutText>
               </AboutNameCardWrapper>
             </Tilt>
 
             <Tilt>
               <AboutBirthCardWrapper>
                 <AboutIconBirth />
-
-                <AboutText>1995.03.04</AboutText>
+                <AboutText>{lanList.about.birth}</AboutText>
               </AboutBirthCardWrapper>
             </Tilt>
             <Tilt>
               <AboutLiveCardWrapper>
                 <AboutIconLive />
 
-                <AboutText>경기도 안양시 동안구</AboutText>
+                <AboutText>{lanList.about.address}</AboutText>
               </AboutLiveCardWrapper>
             </Tilt>
             <Tilt>
               <AboutPhoneCardWrapper>
                 <AboutIconPhone />
 
-                <AboutText>010-9167-5977</AboutText>
+                <AboutText>{lanList.about.phone}</AboutText>
               </AboutPhoneCardWrapper>
             </Tilt>
             <Tilt>
               <AboutMailCardWrapper>
                 <AboutIconMail />
 
-                <AboutText>nahyunbak@naver.com</AboutText>
+                <AboutText>{lanList.about.email}</AboutText>
               </AboutMailCardWrapper>
             </Tilt>
 
@@ -71,7 +73,7 @@ const About = () => {
               <AboutUnivCardWrapper>
                 <AboutIconUniv />
 
-                <AboutText>경인교대 초등교육학과</AboutText>
+                <AboutText>{lanList.about.univ}</AboutText>
               </AboutUnivCardWrapper>
             </Tilt>
           </AboutContentsWrapper>

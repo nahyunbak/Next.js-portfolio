@@ -9,6 +9,7 @@ import {
   BsFillCalendarFill,
 } from "react-icons/bs";
 import { IoCallSharp } from "react-icons/io5";
+import { NameType } from "../../dto";
 
 const AboutIconSize = css`
   font-size: 1.3rem;
@@ -33,7 +34,7 @@ const AboutCardStyle = css`
   }
 `;
 
-export const AboutWrapper = styled.div`
+export const AboutWrapper = styled.div<NameType>`
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(

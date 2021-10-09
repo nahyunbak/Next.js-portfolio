@@ -25,6 +25,8 @@ import {
 } from "./StyledSkills";
 
 import Tilt from "react-parallax-tilt";
+import { lanState } from "../../recoilAtom/language";
+import { useRecoilValue } from "recoil";
 
 const Skills = () => {
   const [skillData, setSkillData] = useState([
@@ -58,6 +60,8 @@ const Skills = () => {
   const backSkills = ["node", "express", "koa", "mongodb", "mysql", "nest"];
   const deploySkills = ["aws", "netlify"];
   const versionSkills = ["git", "github"];
+
+  const lanList = useRecoilValue(lanState);
 
   const removeImg = (skill: string) => {
     setSkillData((oldState: string[]) =>
@@ -219,7 +223,7 @@ const Skills = () => {
               >
                 <FrontSkillsWrapper>
                   <InsideFrontSkillsTitle onClick={toggleFrontAll}>
-                    프론트엔드
+                    {lanList.skills.frontend}
                   </InsideFrontSkillsTitle>
                   <InsideFrontSkillsWrapper>
                     {frontData.map((skill: string, index) => {
@@ -236,7 +240,7 @@ const Skills = () => {
                 </FrontSkillsWrapper>
                 <BackSkillsWrapper>
                   <InsideBackSkillsTitle onClick={toggleBackAll}>
-                    백엔드
+                    {lanList.skills.backend}
                   </InsideBackSkillsTitle>
                   <InsideBackSkillsWrapper>
                     {backData.map((skill: string, index) => {
@@ -262,7 +266,7 @@ const Skills = () => {
               >
                 <VersionSkillsWrapper>
                   <InsideVersionSkillsTitle onClick={toggleVersionAll}>
-                    버젼관리
+                    {lanList.skills.version}
                   </InsideVersionSkillsTitle>
                   <InsideVersionSkillsWrapper>
                     {versionData.map((skill: string, index) => {
@@ -280,7 +284,7 @@ const Skills = () => {
                 </VersionSkillsWrapper>
                 <DeploySkillsWrapper>
                   <InsideDeploySkillsTitle onClick={toggleDeployAll}>
-                    배포
+                    {lanList.skills.deployment}
                   </InsideDeploySkillsTitle>
                   <InsideDeploySkillsWrapper>
                     {deployData.map((skill: string, index) => {
