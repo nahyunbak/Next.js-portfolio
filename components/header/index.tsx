@@ -1,11 +1,11 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { LanType } from "../../dto";
 import { englishState, koreanState, lanState } from "../../recoilAtom/language";
+import { LiWrapper } from "../GlobalStyle";
 import {
   HeaderWrapper,
   ItemWrapper,
   LanguageButton,
-  LiWrapper,
   LogoImg,
   MenuWrapper,
   NavWrapper,

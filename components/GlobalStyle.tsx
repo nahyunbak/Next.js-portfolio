@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 import LinkN from "next/link";
+import { Link as Links } from "react-scroll";
 export const BodyWrapper = styled.div`
   width: 100vw;
   height: 140vh;
@@ -114,4 +115,10 @@ export const horizontalCenterStyle = css`
 
 export const GlobalLink = styled(LinkN)`
   text-decoration: none;
+`;
+
+export const LiWrapper = styled(Links)`
+  font-size: 1rem;
+  list-style-type: none;
+  cursor: pointer;
 `;

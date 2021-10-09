@@ -23,7 +23,7 @@ import {
 import Tilt from "react-parallax-tilt";
 import { useRecoilValue } from "recoil";
 import { lanState } from "../../recoilAtom/language";
-import { LiWrapper } from "../Header/StyledHeader";
+import { LiWrapper } from "../GlobalStyle";
 
 const Greet = () => {
   const lanList = useRecoilValue(lanState);
