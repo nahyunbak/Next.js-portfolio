@@ -77,7 +77,6 @@ const Header = () => {
               duration={500}
             >
               Projects
-              <ToggleIcon />
             </LiWrapper>
           </ItemWrapper>
 

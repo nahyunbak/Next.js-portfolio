@@ -77,7 +77,8 @@ export const NavWrapper = styled.div`
 `;
 
 export const ItemWrapper = styled.ul`
-  width: 500px;
+  margin-left: 40px;
+  width: 400px;
   display: flex;
   justify-content: space-around;
   align-items: center;

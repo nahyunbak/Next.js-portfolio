@@ -23,6 +23,7 @@ import {
 import Tilt from "react-parallax-tilt";
 import { useRecoilValue } from "recoil";
 import { lanState } from "../../recoilAtom/language";
+import { LiWrapper } from "../Header/StyledHeader";
 
 const Greet = () => {
   const lanList = useRecoilValue(lanState);
@@ -43,7 +44,15 @@ const Greet = () => {
             <br /> {lanList.greet.text3}
           </HomeIntrodueArea>
 
-          <HomeReadMoreButton>Read More</HomeReadMoreButton>
+          <LiWrapper
+            to="aboutme"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+          >
+            <HomeReadMoreButton>Read More</HomeReadMoreButton>
+          </LiWrapper>
         </HomeTextWrapper>
         <HomeImgWrapper>
           <HomeWomanImg src="/girlcomputer.png" />

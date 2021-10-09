@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
+import { useRecoilValue } from "recoil";
+import { lanState } from "../../recoilAtom/language";
 import { GlobalLink } from "../GlobalStyle";
 import {
   CarouselArea,
@@ -21,7 +23,6 @@ import {
   ProjectsImgRight,
   ProjectsImgWrapper,
   ProjectsIntroduction,
-  ProjectsLink,
   ProjectsLinkWrapper,
   ProjectsStackWrapper,
   ProjectsTextTitle,
@@ -33,6 +34,7 @@ import {
 
 //nested 프로젝트가 반복되며, props의 값에 따라 display 가 정해진다.
 const Projects = () => {
+  const lanList = useRecoilValue(lanState);
   const [pageNum, setPageNum] = useState<number>(1);
   const [portfolioImgNum, setPortfolioImgNum] = useState<number>(1);
 
@@ -128,26 +130,25 @@ const Projects = () => {
                     </ProjectsImgController>
                   </ProjectsImgWrapper>
                   <ProjectsTextWrapper>
-                    <ProjectsTextTitle>개인 포트폴리오</ProjectsTextTitle>
+                    <ProjectsTextTitle>
+                      {lanList.projects.first.projectTitle}
+                    </ProjectsTextTitle>
                     <ProjectsIntroduction>
-                      개인 포트폴리오입니다. Next.js와 Recoil 등 최신 기술과
-                      타입스크립트로 제작했습니다.
+                      {lanList.projects.first.projectText1}
                       <br />
                       <br />
-                      자기소개· 보유 기술· 프로젝트 등의 정보를 효과적으로
-                      유저에게 전달하고자 디자인과 스타일언어, 기술 측면에서
-                      많은 노력을 기울였습니다.
+                      {lanList.projects.first.projectText2}
                       <br />
                       <br />
-                      꼭 써보고 싶었던 Next.js와 ts에 익숙해진 것은 물론이고,
-                      다양한 로직을 짜보면서 새삼스럽게 프로그래밍의 재미를
-                      느꼈던 소중한 프로젝트입니다.
+                      {lanList.projects.first.projectText3}
+
                       <br />
                     </ProjectsIntroduction>
                     <ProjectsStackWrapper>
-                      <br />✔ 사용 기술: TS, Next.js, React.js
+                      <br /> {lanList.projects.first.skillStack}
                       <br />
-                      <br />✔ 배포: Vercel
+                      <br />
+                      {lanList.projects.first.deployStack}
                     </ProjectsStackWrapper>
                     <ProjectsLinkWrapper>
                       <GlobalLink href="https://github.com/nahyunbak/Next.js-portfolio">
@@ -209,28 +210,26 @@ const Projects = () => {
                     </ProjectsImgController>
                   </ProjectsImgWrapper>
                   <ProjectsTextWrapper>
-                    <ProjectsTextTitle>개인 포트폴리오(구)</ProjectsTextTitle>
+                    <ProjectsTextTitle>
+                      {lanList.projects.second.projectTitle}
+                    </ProjectsTextTitle>
                     <ProjectsIntroduction>
-                      발레를 테마로 제작한 개인 포트폴리오입니다. React.js와
-                      Redux로 제작했습니다.
+                      {lanList.projects.second.projectText1}
                       <br />
                       <br />
-                      리액트와 리덕스 툴킷을 사용하여 만든 첫 포트폴리오라는
-                      점에서 의미가 깊습니다.
+                      {lanList.projects.second.projectText2}
                       <br />
                       <br />
-                      다만 단순한 디자인, 정적인 interaction, 렌더링 속도를
-                      고려하지 않은 코드 등 부족한 부분이 점점 크게
-                      느껴졌습니다. 동시에 직관적인 SEO와 상태관리를 향한 열망도
-                      커졌습니다.
+                      {lanList.projects.second.projectText3}
                       <br />
                       <br />
-                      하여 현재의 포트폴리오 사이트를 새로 제작하게 되었습니다.
+                      {lanList.projects.second.projectText4}
                     </ProjectsIntroduction>
                     <ProjectsStackWrapper>
-                      <br />✔ 사용 기술: JS, React.js, Redux.js
                       <br />
-                      <br />✔ 배포: Netlify
+                      {lanList.projects.second.skillStack}
+                      <br />
+                      <br /> {lanList.projects.second.deployStack}
                     </ProjectsStackWrapper>
                     <ProjectsLinkWrapper>
                       <GlobalLink href="https://github.com/nahyunbak/react-portfolio-ballet">
@@ -278,28 +277,27 @@ const Projects = () => {
                     </ProjectsImgController>
                   </ProjectsImgWrapper>
                   <ProjectsTextWrapper>
-                    <ProjectsTextTitle>글쓰기 앱(백엔드)</ProjectsTextTitle>
+                    <ProjectsTextTitle>
+                      {lanList.projects.third.projectTitle}
+                    </ProjectsTextTitle>
                     <ProjectsIntroduction>
                       <br />
-                      글쓰기 앱의 백엔드를 구현한 프로젝트입니다. Nest.js와
-                      MongoDB를 사용하여 제작했습니다.
+                      {lanList.projects.third.projectText1}
                       <br />
                       <br />
-                      Nest.js와 TS, 공식문서에 익숙해진 계기가 된
-                      프로젝트였습니다.
+                      {lanList.projects.third.projectText2}
                       <br />
-                      <br /> 다만 관계가 중시되는 데이터를 처리하는 데 MongoDB를
-                      사용했다는 점, guard 등 기능 이해가 미흡하다는 점에서
-                      아쉬움이 남습니다.
+                      <br /> {lanList.projects.third.projectText3}
                       <br />
                       <br />
-                      조만간 RDBMS와 다양한 인증 전략을 사용하여 TDD방식으로
-                      다시 개발하고자 합니다.
+                      {lanList.projects.third.projectText4}
                     </ProjectsIntroduction>
                     <ProjectsStackWrapper>
-                      <br />✔ 사용 기술: Nest.js, MongoDB
                       <br />
-                      <br />✔ 배포: AWS EC2, Linux, NGINX
+                      {lanList.projects.third.skillStack}
+                      <br />
+                      <br />
+                      {lanList.projects.third.deployStack}
                     </ProjectsStackWrapper>
                     <ProjectsLinkWrapper>
                       <GlobalLink href="https://github.com/nahyunbak/nestjs-writingapp-backend">

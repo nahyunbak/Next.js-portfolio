@@ -40,7 +40,7 @@ export const koreanState = {
   },
   projects: {
     first: {
-      project1Title: "개인 포트폴리오",
+      projectTitle: "개인 포트폴리오",
       projectText1:
         "개인 포트폴리오입니다. Next.js와 Recoil 등 최신 기술과 타입스크립트로 제작했습니다.",
       projectText2:
@@ -51,7 +51,7 @@ export const koreanState = {
       deployStack: "✔ 배포: Vercel",
     },
     second: {
-      project1Title: "개인 포트폴리오(구)",
+      projectTitle: "개인 포트폴리오(구)",
       projectText1:
         "발레를 테마로 제작한 개인 포트폴리오입니다. React.js와 Redux로 제작했습니다.",
       projectText2:
@@ -63,12 +63,14 @@ export const koreanState = {
       deployStack: "✔ 배포: Netlify",
     },
     third: {
-      project1Title: "글쓰기 앱(백엔드)",
+      projectTitle: "글쓰기 앱(백엔드)",
       projectText1:
         " 글쓰기 앱의 백엔드를 구현한 프로젝트입니다. Nest.js와 MongoDB를 사용하여 제작했습니다.",
       projectText2:
-        "다만 관계가 중시되는 데이터를 처리하는 데 MongoDB를 사용했다는 점, guard 등 기능 이해가 미흡하다는 점에서 아쉬움이 남습니다.",
+        "Nest.js와 TS, 공식문서에 익숙해진 계기가 된 프로젝트였습니다.",
       projectText3:
+        "다만 관계가 중시되는 데이터를 처리하는 데 MongoDB를 사용했다는 점, guard 등 기능 이해가 미흡하다는 점에서 아쉬움이 남습니다.",
+      projectText4:
         "조만간 RDBMS와 다양한 인증 전략을 사용하여 TDD방식으로 다시 개발하고자 합니다.",
       skillStack: "✔ 사용 기술: Nest.js, MongoDB",
       deployStack: "✔ 배포: AWS EC2, Linux, NGINX",
@@ -84,7 +86,7 @@ export const englishState = {
     title2: "I am a",
     title3: "JS developer",
     text1:
-      "Passion to my work, strong functionality, and strict responsibility are my specialties",
+      "Passion to my work, strong functionality, and a strict sense of responsibility are my specialties",
     text2:
       "I always try to be a better person than I was yesterday, Since I aware that today's work was done with effort, not by luck.",
     text3: "",
@@ -106,43 +108,44 @@ export const englishState = {
   skills: {
     frontend: "Frontend",
     backend: "Backend",
-    version: "VC",
+    version: "VCS",
     deployment: "Deployment",
   },
   projects: {
     first: {
-      project1Title: "Personal Portfolio",
+      projectTitle: "Personal Portfolio",
       projectText1:
         "It's my personal portfolio, made using the latest technologies - Typescript, Next.js and Recoil.",
       projectText2:
         "I put a lot of effort into design, CSS, and technology to effectively deliver information such as self-introduction, technology, and project to users sections",
       projectText3:
-        "Not only did I get used to Next.js and ts, but also genuinely feel pleasant while progamming various logics.",
-      skillStack: "✔ Skills Utilized: TS, Next.js, React.js",
+        "Not only did I become more familiar with Next.js and TypeScript, but I also felt genuinely pleasant while programming the logic.",
+      skillStack: "✔ Skills: TS, Next.js, React.js",
       deployStack: "✔ Deployment: Vercel",
     },
     second: {
-      project1Title: "Personal Portfolio(old)",
+      projectTitle: "Personal Portfolio(old)",
       projectText1:
         "It's a ballet-themed personal portfolio, made with React.js and Redux.",
       projectText2:
-        "I utilized React and Redux for the first time in this portfolio",
+        "I utilized React and Redux for the first time while making this portfolio",
       projectText3:
-        "However, I felt the lack of design skills, dynamic interactions, and clean code cause I didn't care much about rendering speed from the start. At the same time, the desire for intuitive SEO and state management has grown.",
-      projectText4: "That's why we created a new portfolio site.",
-      skillStack: "✔  Skills Utilized: JS, React.js, Redux.js",
+        "I felt the lack of design skills, dynamic interactions, and clean code because I didn't care much about rendering speed from the start. At the same time, my desire for intuitive SEO and state management has grown.",
+      projectText4: "That's why I created a new portfolio site.",
+      skillStack: "✔  Skills: JS, React.js, Redux.js",
       deployStack: "✔ Deployment: Netlify",
     },
     third: {
-      project1Title: "Writing app (backend)",
+      projectTitle: "Writing app (backend)",
       projectText1:
-        "It is a project that implements the backend of the writing app. I made it using Nest.js and MongoDB.",
+        "It is a project that implements the backend of a writing app. I made it using Nest.js and MongoDB.",
       projectText2:
-        "However, I made mistake to use MongoDB for relation based information. And some understanding of functions such as guards was not enough",
-      projectText3:
-        "So In the near future, I am going to revise it in a TDD way using RDBMS and various authentication strategies.",
-      skillStack: "✔ Skills Utilized: Nest.js, MongoDB",
-      deployStack: "✔ Deployment: AWS EC2, Linux, NGINX",
+        "It was great chance to get used to reading official documentation, and using TS",
+      projectText3: "However, I felt this is not enough",
+      projectText4:
+        "So in the near future I am going to revise it in a TDD way using RDBMS and various advanced authentication strategies.",
+      skillStack: "✔ Skills: Nest.js, MongoDB",
+      deployStack: "✔ Deployment: AWS EC2, NGINX",
     },
   },
 };
