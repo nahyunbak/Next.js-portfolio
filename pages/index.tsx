@@ -1,11 +1,5 @@
+import { Obj1, Obj2 } from "../components/GlobalStyle";
 import Header from "../components/Header";
-import {
-  BodyWrapper,
-  BodyWrapper2,
-  Obj1,
-  Obj2,
-} from "../components/GlobalStyle";
-
 import Greet from "../components/Greet";
 import About from "../components/About";
 import Skills from "../components/Skills";
