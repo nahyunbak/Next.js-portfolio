@@ -4,8 +4,8 @@ import { cardIconStyle, glassStyle, removeLiDeco } from "../GlobalStyle";
 import { NameType } from "../../dto";
 
 export const HomeWrapper = styled.div<NameType>`
-  width: 100vw;
-  height: 120vh;
+  width: 100%;
+  height: 1400px;
   background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   display: flex;
   justify-content: center;

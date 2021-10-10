@@ -96,6 +96,12 @@ export const insideTitleStyle = css`
 
 //새로 중앙정렬
 
+export const CenterCenterStyle = css`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+`;
+
 export const verticalCenterStyle = css`
   display: flex;
   flex-direction: column;

@@ -27,58 +27,56 @@ const About = () => {
   const lanList = useRecoilValue(lanState);
   return (
     <AboutWrapper name="aboutme">
-      <Parallax className="custom-class" y={[-20, 20]} tagOuter="figure">
-        <AboutArea>
+      <AboutArea data-aos="fade-up">
+        <Tilt>
+          <AboutTitle>ABOUT</AboutTitle>
+        </Tilt>
+        <AboutContentsWrapper>
           <Tilt>
-            <AboutTitle>ABOUT</AboutTitle>
+            <AboutNameCardWrapper>
+              <AboutIconName />
+
+              <AboutText>{lanList.about.name}</AboutText>
+            </AboutNameCardWrapper>
           </Tilt>
-          <AboutContentsWrapper>
-            <Tilt>
-              <AboutNameCardWrapper>
-                <AboutIconName />
 
-                <AboutText>{lanList.about.name}</AboutText>
-              </AboutNameCardWrapper>
-            </Tilt>
+          <Tilt>
+            <AboutBirthCardWrapper>
+              <AboutIconBirth />
+              <AboutText>{lanList.about.birth}</AboutText>
+            </AboutBirthCardWrapper>
+          </Tilt>
+          <Tilt>
+            <AboutLiveCardWrapper>
+              <AboutIconLive />
 
-            <Tilt>
-              <AboutBirthCardWrapper>
-                <AboutIconBirth />
-                <AboutText>{lanList.about.birth}</AboutText>
-              </AboutBirthCardWrapper>
-            </Tilt>
-            <Tilt>
-              <AboutLiveCardWrapper>
-                <AboutIconLive />
+              <AboutText>{lanList.about.address}</AboutText>
+            </AboutLiveCardWrapper>
+          </Tilt>
+          <Tilt>
+            <AboutPhoneCardWrapper>
+              <AboutIconPhone />
 
-                <AboutText>{lanList.about.address}</AboutText>
-              </AboutLiveCardWrapper>
-            </Tilt>
-            <Tilt>
-              <AboutPhoneCardWrapper>
-                <AboutIconPhone />
+              <AboutText>{lanList.about.phone}</AboutText>
+            </AboutPhoneCardWrapper>
+          </Tilt>
+          <Tilt>
+            <AboutMailCardWrapper>
+              <AboutIconMail />
 
-                <AboutText>{lanList.about.phone}</AboutText>
-              </AboutPhoneCardWrapper>
-            </Tilt>
-            <Tilt>
-              <AboutMailCardWrapper>
-                <AboutIconMail />
+              <AboutText>{lanList.about.email}</AboutText>
+            </AboutMailCardWrapper>
+          </Tilt>
 
-                <AboutText>{lanList.about.email}</AboutText>
-              </AboutMailCardWrapper>
-            </Tilt>
+          <Tilt>
+            <AboutUnivCardWrapper>
+              <AboutIconUniv />
 
-            <Tilt>
-              <AboutUnivCardWrapper>
-                <AboutIconUniv />
-
-                <AboutText>{lanList.about.univ}</AboutText>
-              </AboutUnivCardWrapper>
-            </Tilt>
-          </AboutContentsWrapper>
-        </AboutArea>
-      </Parallax>
+              <AboutText>{lanList.about.univ}</AboutText>
+            </AboutUnivCardWrapper>
+          </Tilt>
+        </AboutContentsWrapper>
+      </AboutArea>
     </AboutWrapper>
   );
 };

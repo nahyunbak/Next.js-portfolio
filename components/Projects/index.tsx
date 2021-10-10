@@ -90,7 +90,7 @@ const Projects = () => {
   return (
     <>
       <ProjectsWrapper name="projects">
-        <ProjectsArea>
+        <ProjectsArea data-aos="fade-up">
           <CarouselWrapper>
             <CarouselLeft onClick={decreasePageNum} />
             <CarouselArea>

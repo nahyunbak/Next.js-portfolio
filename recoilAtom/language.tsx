@@ -119,7 +119,7 @@ export const englishState = {
       projectText2:
         "I put a lot of effort into design, CSS, and technology to effectively deliver information such as self-introduction, technology, and project to users sections",
       projectText3:
-        "Not only did I become more familiar with Next.js and TypeScript, but I also felt genuinely pleasant while programming the logic.",
+        "During this project, not only did I become more familiar with Next.js and TypeScript, but I also felt genuinely pleasant while programming the logic.",
       skillStack: "✔ Skills: TS, Next.js, React.js",
       deployStack: "✔ Deployment: Vercel",
     },

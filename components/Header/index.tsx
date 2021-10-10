@@ -7,6 +7,7 @@ import {
   ItemWrapper,
   LanguageButton,
   LogoImg,
+  MenuToggle,
   MenuWrapper,
   NavWrapper,
   TitleArea,
@@ -28,6 +29,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <MenuWrapper>
+        <MenuToggle />
         <LiWrapper
           to="greet"
           spy={true}
@@ -40,6 +42,7 @@ const Header = () => {
             <TitleArea>{lanList.mainTitle}</TitleArea>
           </TitleWrapper>
         </LiWrapper>
+
         <NavWrapper>
           <ItemWrapper>
             <LiWrapper

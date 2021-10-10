@@ -9,21 +9,31 @@ import Footer from "../components/Footer";
 
 import { RecoilRoot } from "recoil";
 
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 export default function Home() {
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   return (
     <>
       <RecoilRoot>
         <ParallaxProvider>
           <Header />
-          <Greet />
+        </ParallaxProvider>
+      </RecoilRoot>
+    </>
+  );
+}
+
+/*
+    <Greet />
           <Obj1></Obj1>
           <Obj2></Obj2>
           <About />
           <Skills />
           <Projects />
           <Footer />
-        </ParallaxProvider>
-      </RecoilRoot>
-    </>
-  );
-}
+    */

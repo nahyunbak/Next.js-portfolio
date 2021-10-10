@@ -196,7 +196,7 @@ const Skills = () => {
 
   return (
     <SkillsWrapper name="skills">
-      <SkillsArea>
+      <SkillsArea data-aos="fade-up">
         <Tilt>
           <InsidePrevSkillsTitle onClick={toggleSkillsAll}>
             SKILLS

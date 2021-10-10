@@ -36,7 +36,7 @@ const AboutCardStyle = css`
 
 export const AboutWrapper = styled.div<NameType>`
   width: 100vw;
-  height: 100vh;
+  height: 1000px;
   background-image: linear-gradient(
     to right,
     #3ab5b0 0%,

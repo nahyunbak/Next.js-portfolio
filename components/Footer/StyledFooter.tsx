@@ -5,10 +5,11 @@ import { BsGithub, BsFacebook, BsLinkedin } from "react-icons/bs";
 const footerStyle = css`
   font-size: 2rem;
   color: white;
+  cursor: pointer;
 `;
 export const FooterWrapper = styled.div`
   width: 100vw;
-  height: 20vh;
+  height: 300px;
   background-color: black;
   display: flex;
   justify-content: center;

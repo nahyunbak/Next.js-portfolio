@@ -58,7 +58,7 @@ export const ProjectsWrapper = styled.div<NameType>`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 95vh;
+  height: 1200px;
   background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
   padding-top: 140px;
 `;

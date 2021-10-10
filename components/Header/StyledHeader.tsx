@@ -1,18 +1,23 @@
 import styled from "styled-components";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Link as Links } from "react-scroll";
+import { AiOutlineMenu } from "react-icons/ai";
 
 export const HeaderWrapper = styled.div`
   width: 100vw;
+
   height: 130px;
   font-family: "Noto Sans KR", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: grey;
+  padding: 0px 20px;
 `;
 
 export const MenuWrapper = styled.div`
   width: 90vw;
+  max-width: 2000px;
   height: 80px;
   border-radius: 20px;
   padding: 0px 40px;
@@ -27,13 +32,23 @@ export const MenuWrapper = styled.div`
   position: fixed;
   backdrop-filter: blur(15px);
   z-index: 2;
+  @media (max-width: 500px) {
+    padding: 0px 20px;
+  }
 `;
 
 export const TitleWrapper = styled.div`
   width: 270px;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 500px) {
+    width: 200px;
+  }
+  @media (max-width: 368px) {
+    display: none;
+  }
 `;
 export const LogoImg = styled.img`
   width: 60px;
@@ -50,8 +65,19 @@ export const TitleArea = styled.div`
   align-items: center;
   font-weight: 400;
   cursor: pointer;
+  @media (max-width: 500px) {
+    width: 100px;
+    font-size: 1rem;
+  }
 `;
 
+export const MenuToggle = styled(AiOutlineMenu)`
+  display: none;
+  @media (max-width: 500px) {
+    display: block;
+    font-size: 3rem;
+  }
+`;
 export const NavWrapper = styled.div`
   display: flex;
   justify-content: space-between;
@@ -74,6 +100,12 @@ export const NavWrapper = styled.div`
     transform: skewX(45deg) translateX(0);
     transition: 0.5s;
   }
+  @media (max-width: 980px) {
+    justify-content: flex-end;
+  }
+  @media (max-width: 500px) {
+    width: 80px;
+  }
 `;
 
 export const ItemWrapper = styled.ul`
@@ -82,6 +114,9 @@ export const ItemWrapper = styled.ul`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: 980px) {
+    display: none;
+  }
 `;
 
 export const LanguageButton = styled.div`
@@ -105,8 +140,13 @@ export const LanguageButton = styled.div`
       #8989ba 52%,
       #8989ba 100%
     );
-
     color: #f5e5f5;
+  }
+  @media (max-width: 500px) {
+    font-size: 0.7rem;
+    width: 80px;
+    border-radius: 15px;
+    height: 38px;
   }
 `;
 
