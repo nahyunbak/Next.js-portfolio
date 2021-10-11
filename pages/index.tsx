@@ -23,8 +23,8 @@ export default function Home() {
         <ParallaxProvider>
           <Header />
           <Greet />
-
           <About />
+          <Skills />
         </ParallaxProvider>
       </RecoilRoot>
     </>

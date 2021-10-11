@@ -226,10 +226,10 @@ export const AboutText = styled.li`
   @media (max-width: 900px) {
     font-size: 1.3rem;
   }
-  @media (max-width: 310px) {
-    font-size: 1.1rem;
+  @media (max-width: 400px) {
+    font-size: 1rem;
   }
   @media (max-width: 279px) {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 `;
