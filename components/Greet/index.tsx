@@ -12,6 +12,9 @@ import {
   HomeReadMoreButton,
   HomeTextWrapper,
   HomeTitleArea,
+  HomeTitleText1,
+  HomeTitleText2,
+  HomeTitleText3,
   HomeWomanImg,
   HomeWrapper,
   MailIcon,
@@ -32,11 +35,9 @@ const Greet = () => {
       <HomeContentsWrapper>
         <HomeTextWrapper>
           <HomeTitleArea>
-            {lanList.greet.title1}
-            <br />
-            {lanList.greet.title2}
-            <br />
-            {lanList.greet.title3}
+            <HomeTitleText1>{lanList.greet.title1}</HomeTitleText1>
+            <HomeTitleText2>{lanList.greet.title2}</HomeTitleText2>
+            <HomeTitleText3>{lanList.greet.title3}</HomeTitleText3>
           </HomeTitleArea>
           <HomeIntrodueArea>
             {lanList.greet.text1}

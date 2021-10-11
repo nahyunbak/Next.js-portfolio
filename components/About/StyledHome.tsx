@@ -1,7 +1,12 @@
 import styled, { css } from "styled-components";
 
 import { AiFillMail } from "react-icons/ai";
-import { removeLiDeco, glassStyle, titleStyle } from "../GlobalStyle";
+import {
+  removeLiDeco,
+  glassStyle,
+  titleStyle,
+  horizontalCenterStyle,
+} from "../GlobalStyle";
 import { FaSchool } from "react-icons/fa";
 import {
   BsFillHouseDoorFill,
@@ -18,10 +23,25 @@ const AboutIconSize = css`
 
   color: white;
   margin-right: 20px;
+  @media (max-width: 1100px) {
+    font-size: 0.8rem;
+  }
+  @media (max-width: 900px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 504px) {
+    font-size: 1.1rem;
+  }
+  @media (max-width: 378px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 348px) {
+    display: none;
+  }
 `;
 
 const AboutCardStyle = css`
-  width: 400px;
+  width: 350px;
   height: 100px;
   display: flex;
 
@@ -31,6 +51,27 @@ const AboutCardStyle = css`
   &:hover {
     background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
     transform: scale(1.1) translateY(20px);
+  }
+
+  @media (max-width: 1700px) {
+    width: 350px;
+  }
+  @media (max-width: 1400px) {
+    width: 300px;
+  }
+  @media (max-width: 1100px) {
+    width: 250px;
+  }
+  @media (max-width: 900px) {
+    width: 300px;
+  }
+  @media (max-width: 730px) {
+    width: 350px;
+    height: 80px;
+  }
+  @media (max-width: 504px) {
+    width: 70vw;
+    height: 70px;
   }
 `;
 
@@ -48,17 +89,30 @@ export const AboutWrapper = styled.div<NameType>`
   flex-direction: column;
   align-items: center;
   margin-top: -130px;
+  @media (max-width: 730px) {
+    height: 1200px;
+  }
 `;
 
 export const AboutArea = styled.div`
   ${glassStyle};
-  width: 1600px;
+  width: 1300px;
   height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background: rgba(255, 255, 255, 0.2);
+
+  @media (max-width: 1400px) {
+    width: 90%;
+  }
+  @media (max-width: 900px) {
+    height: 900px;
+  }
+  @media (max-width: 730px) {
+    height: 1000px;
+  }
 `;
 
 export const AboutTitle = styled.div`
@@ -66,14 +120,35 @@ export const AboutTitle = styled.div`
 
   ${titleStyle}
   margin-top: 20px;
+  @media (max-width: 730px) {
+    width: 80vw;
+    margin: 50px 0px;
+  }
+  @media (max-width: 550px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 350px) {
+    font-size: 2rem;
+    height: 80px;
+  }
+  @media (max-width: 300px) {
+    font-size: 1.7rem;
+  }
 `;
 export const AboutContentsWrapper = styled.div`
-  width: 1500px;
+  width: 1300px;
   height: 400px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  ${horizontalCenterStyle};
   flex-wrap: wrap;
+  @media (max-width: 1400px) {
+    width: 100%;
+  }
+  @media (max-width: 900px) {
+    height: 600px;
+  }
+  @media (max-width: 730px) {
+    height: 2000px;
+  }
 `;
 
 export const AboutNameCardWrapper = styled.div`
@@ -142,38 +217,19 @@ export const AboutText = styled.li`
   ${removeLiDeco};
   font-size: 1.6rem;
   font-weight: 900;
+  @media (max-width: 1400px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 1100px) {
+    font-size: 1.1rem;
+  }
+  @media (max-width: 900px) {
+    font-size: 1.3rem;
+  }
+  @media (max-width: 310px) {
+    font-size: 1.1rem;
+  }
+  @media (max-width: 279px) {
+    font-size: 1rem;
+  }
 `;
-
-/**
- * 
- * const About = () => {
-  return <AboutWrapper>
-      <AboutContentsWrapper>
-          <AboutCardWrapper>
-              <AboutIconWrapper>
-                  <AboutIconMail/>
-              </AboutIconWrapper>
-              <AboutCardMail></AboutCardMail>
-              <AboutCardDetail></AboutCardMailDetail>
-          </AboutCardWrapper>
-          <AboutCardWrapper>
-              <AboutIconWrapper>
-                  <AboutIconUniv/>
-              </AboutIconWrapper>
-              <AboutCardText></AboutCardUniv>
-              <AboutCardUnivDetail></AboutCardUnivDetail>
-          </AboutCardWrapper>
-          <AboutCardWrapper>
-              <AboutIconWrapper>
-                  <AboutIconLive/>
-              </AboutIconWrapper>
-              <AboutCardLive></AboutCardLive>
-              <AboutCardLiveDetail></AboutCardLiveDetail>
-          </AboutCardWrapper>
-      </AboutContentsWrapper>
-  </AboutWrapper>;
-};
-export default About;
-
- * 
- */

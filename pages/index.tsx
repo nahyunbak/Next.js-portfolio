@@ -22,6 +22,9 @@ export default function Home() {
       <RecoilRoot>
         <ParallaxProvider>
           <Header />
+          <Greet />
+
+          <About />
         </ParallaxProvider>
       </RecoilRoot>
     </>
@@ -29,6 +32,7 @@ export default function Home() {
 }
 
 /*
+      <Header />
     <Greet />
           <Obj1></Obj1>
           <Obj2></Obj2>

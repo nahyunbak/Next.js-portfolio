@@ -2,21 +2,31 @@ import styled from "styled-components";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Link as Links } from "react-scroll";
 import { AiOutlineMenu } from "react-icons/ai";
+import {
+  CenterCenterStyle,
+  glassStyle,
+  verticalCenterStyle,
+} from "../GlobalStyle";
+import { ToggleType } from "../../dto";
 
-export const HeaderWrapper = styled.div`
-  width: 100vw;
-
-  height: 130px;
+export const HeaderWrapper = styled.div<ToggleType>`
+  width: 100%;
+  //토글되면 헤더 영역도 100에서 300으로바뀌고 greet영역도 바뀐다 ㅇㅋ?
+  height: 100px;
   font-family: "Noto Sans KR", sans-serif;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  background-color: grey;
-  padding: 0px 20px;
+
+  padding-top: 20px;
+  @media (min-width: 767px) {
+    height: 100px;
+  }
 `;
 
 export const MenuWrapper = styled.div`
-  width: 90vw;
+  width: 90%;
   max-width: 2000px;
   height: 80px;
   border-radius: 20px;
@@ -32,18 +42,21 @@ export const MenuWrapper = styled.div`
   position: fixed;
   backdrop-filter: blur(15px);
   z-index: 2;
-  @media (max-width: 500px) {
+  @media (max-width: 944px) {
     padding: 0px 20px;
+  }
+  @media (max-width: 425px) {
+    height: 65px;
   }
 `;
 
 export const TitleWrapper = styled.div`
-  width: 270px;
+  width: 250px;
   height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 500px) {
+  @media (max-width: 797px) {
     width: 200px;
   }
   @media (max-width: 368px) {
@@ -65,17 +78,24 @@ export const TitleArea = styled.div`
   align-items: center;
   font-weight: 400;
   cursor: pointer;
-  @media (max-width: 500px) {
-    width: 100px;
+  @media (max-width: 980px) {
+    width: 140px;
+    font-size: 1rem;
+  }
+  @media (max-width: 797px) {
+    width: 140px;
     font-size: 1rem;
   }
 `;
 
-export const MenuToggle = styled(AiOutlineMenu)`
+export const MenuToggleButton = styled(AiOutlineMenu)`
   display: none;
-  @media (max-width: 500px) {
+  @media (max-width: 685px) {
     display: block;
-    font-size: 3rem;
+    font-size: 2.7rem;
+  }
+  @media (max-width: 425px) {
+    font-size: 2rem;
   }
 `;
 export const NavWrapper = styled.div`
@@ -100,10 +120,7 @@ export const NavWrapper = styled.div`
     transform: skewX(45deg) translateX(0);
     transition: 0.5s;
   }
-  @media (max-width: 980px) {
-    justify-content: flex-end;
-  }
-  @media (max-width: 500px) {
+  @media (max-width: 685px) {
     width: 80px;
   }
 `;
@@ -115,6 +132,9 @@ export const ItemWrapper = styled.ul`
   justify-content: space-around;
   align-items: center;
   @media (max-width: 980px) {
+    width: 300px;
+  }
+  @media (max-width: 685px) {
     display: none;
   }
 `;
@@ -142,15 +162,40 @@ export const LanguageButton = styled.div`
     );
     color: #f5e5f5;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     font-size: 0.7rem;
     width: 80px;
     border-radius: 15px;
     height: 38px;
+  }
+  @media (max-width: 184px) {
+    display: none;
   }
 `;
 
 export const ToggleIcon = styled(RiArrowDownSLine)`
   font-size: 1.4rem;
   vertical-align: middle;
+`;
+
+export const MobileMenuWrapper = styled.div<ToggleType>`
+  display: none;
+  @media (max-width: 685px) {
+    position: fixed;
+    z-index: 10;
+    width: 95%;
+    height: 200px;
+    transform: translateY(100px);
+
+    ${glassStyle};
+    ${verticalCenterStyle};
+    display: ${(props) => (props.isToggled === false ? "none" : "flex")};
+  }
+`;
+
+export const MobileMenu = styled.div`
+  ${CenterCenterStyle};
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: white;
 `;

@@ -1,11 +1,25 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { AiTwotoneMail } from "react-icons/ai";
 import { cardIconStyle, glassStyle, removeLiDeco } from "../GlobalStyle";
 import { NameType } from "../../dto";
 
+const textAnimationStyle = css`
+  opacity: 0;
+  list-style-type: none;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  animation: fadein 3s;
+  animation-fill-mode: forwards;
+`;
 export const HomeWrapper = styled.div<NameType>`
   width: 100%;
-  height: 1400px;
+  height: 1200px;
   background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   display: flex;
   justify-content: center;
@@ -15,23 +29,56 @@ export const HomeWrapper = styled.div<NameType>`
 `;
 
 export const HomeContentsWrapper = styled.div`
-  width: 1400px;
-  height: 900px;
+  width: 1200px;
+  height: 750px;
+  padding: 20px 50px;
+
   margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   ${glassStyle}
   z-index: 1;
+
+  @media (max-width: 1500px) {
+    width: 80%;
+  }
+  @media (max-width: 1327px) {
+    padding: 0px 50px;
+    margin: 0px 30px;
+  }
+  @media (max-width: 887px) {
+    width: 70%;
+  }
+  @media (max-width: 550px) {
+    width: 65%;
+  }
+  @media (max-width: 350px) {
+    width: 65%;
+    padding: 0px 20px;
+  }
+  @media (max-width: 300px) {
+    height: 850px;
+  }
 `;
 
 export const HomeTextWrapper = styled.div`
   width: 450px;
-  height: 800px;
+  height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  @media (max-width: 1500px) {
+    width: 400px;
+  }
+  @media (max-width: 1227px) {
+    width: 300px;
+  }
+  @media (max-width: 1227px) {
+    padding: 50px 0px;
+    width: 100%;
+  }
 `;
 
 export const HomeTitleArea = styled.div`
@@ -41,24 +88,84 @@ export const HomeTitleArea = styled.div`
   font-size: 5rem;
   font-weight: 600;
   line-height: 93px;
+  @media (max-width: 1500px) {
+    font-size: 4.5rem;
+  }
+  @media (max-width: 750px) {
+    width: 400px;
+    font-size: 3.5rem;
+  }
+  @media (max-width: 646px) {
+    width: 300px;
+    font-size: 3rem;
+  }
+  @media (max-width: 484px) {
+    width: 90%;
+    font-size: 2.5rem;
+    line-height: 80px;
+  }
+  @media (max-width: 417px) {
+    width: 100%;
+    font-size: 2.1rem;
+    line-height: 80px;
+  }
+  @media (max-width: 350px) {
+    font-size: 1.7rem;
+    line-height: 70px;
+  }
+  @media (max-width: 300px) {
+    font-size: 1.5rem;
+    line-height: 60px;
+    height: 60px;
+  }
+`;
+
+export const HomeTitleText1 = styled.li`
+  ${textAnimationStyle};
+`;
+export const HomeTitleText2 = styled.li`
+  ${textAnimationStyle};
+  animation-delay: 0.5s;
+`;
+export const HomeTitleText3 = styled.li`
+  ${textAnimationStyle};
+  animation-delay: 1s;
 `;
 
 export const HomeIntrodueArea = styled.div`
+  ${textAnimationStyle}
+  animation-delay: 1.5s;
   width: 500px;
   height: 200px;
   color: white;
   font-size: 1.3rem;
   margin-top: 200px;
   line-height: 40px;
+  @media (max-width: 1500px) {
+    font-size: 1.2rem;
+    line-height: 35px;
+  }
+  @media (max-width: 1227px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 690px) {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+  @media (max-width: 484px) {
+    width: 90%auto;
+  }
+  @media (max-width: 300px) {
+    height: 500px;
+  }
 `;
 
 export const HomeReadMoreButton = styled.div`
   width: 170px;
   height: 60px;
   border-radius: 14px;
-
   background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-
   color: white;
   display: flex;
   justify-content: center;
@@ -71,6 +178,17 @@ export const HomeReadMoreButton = styled.div`
     background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
     letter-spacing: 1px;
   }
+  @media (max-width: 750px) {
+    margin-top: 60px;
+  }
+
+  @media (max-width: 450px) {
+    margin-top: 100px;
+  }
+
+  @media (max-width: 267px) {
+    width: 60vw;
+  }
 `;
 
 export const HomeImgWrapper = styled.div`
@@ -79,12 +197,29 @@ export const HomeImgWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;
 
 export const HomeWomanImg = styled.img`
   width: 540px;
-  height: 720px;
+
   margin-right: 10px;
+  @media (max-width: 1300px) {
+    margin-top: 200px;
+    width: 400px;
+  }
+  @media (max-width: 1206px) {
+  }
+
+  @media (max-width: 996px) {
+    margin-top: 400px;
+    width: 250px;
+  }
+  @media (max-width: 887px) {
+    display: none;
+  }
 `;
 
 //카드 디자인
@@ -95,6 +230,13 @@ export const CardWrapper = styled.div`
   height: 300px;
   top: 130px;
   right: 0px;
+  @media (max-width: 1206px) {
+    top: 200px;
+    right: -50px;
+  }
+  @media (max-width: 1090px) {
+    display: none;
+  }
 `;
 export const HomeCard = styled.div`
   width: 100%;
