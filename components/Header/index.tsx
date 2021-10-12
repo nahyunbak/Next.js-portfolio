@@ -107,7 +107,7 @@ const Header = () => {
           <MobileMenu>Home</MobileMenu>
         </LiWrapper>
         <LiWrapper
-          to="greet"
+          to="aboutme"
           spy={true}
           smooth={true}
           offset={0}
@@ -116,7 +116,7 @@ const Header = () => {
           <MobileMenu>About</MobileMenu>
         </LiWrapper>
         <LiWrapper
-          to="greet"
+          to="skills"
           spy={true}
           smooth={true}
           offset={0}
@@ -125,7 +125,7 @@ const Header = () => {
           <MobileMenu>Skills</MobileMenu>
         </LiWrapper>
         <LiWrapper
-          to="greet"
+          to="projects"
           spy={true}
           smooth={true}
           offset={0}
