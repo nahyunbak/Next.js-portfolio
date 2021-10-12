@@ -46,7 +46,6 @@ const insideRightStyle = css`
 
 export const SkillsWrapper = styled.div<NameType>`
   width: 100vw;
-
   ${verticalCenterStyle}
   background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
   @media (max-width: 722px) {

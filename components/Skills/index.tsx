@@ -85,33 +85,13 @@ const Skills = () => {
       setIfEmpty((oldState) => !oldState);
     }
   };
-
-  const toggleFront = (skill: string, e) => {
-    setFrontData((oldState: string[]) =>
-      oldState.filter((item) => item !== skill)
-    );
-    setSkillData((oldState: string[]) => [...oldState, skill]);
-    e.stopPropagation();
-  };
-
-  const toggleBack = (skill: string, e) => {
-    setBackData((oldState: string[]) =>
-      oldState.filter((item) => item !== skill)
-    );
-    setSkillData((oldState: string[]) => [...oldState, skill]);
-    e.stopPropagation();
-  };
-
-  const toggleDeploy = (skill: string, e) => {
-    setDeployData((oldState: string[]) =>
-      oldState.filter((item) => item !== skill)
-    );
-    setSkillData((oldState: string[]) => [...oldState, skill]);
-    e.stopPropagation();
-  };
-
-  const toggleVersion = (skill: string, e) => {
-    setVersionData((oldState: string[]) =>
+  //세터함수를 인자로 넘겨서 리팩토링
+  const toggleSkill = (
+    skill: string,
+    skillSetter: React.Dispatch<React.SetStateAction<string[]>>,
+    e
+  ) => {
+    skillSetter((oldState: string[]) =>
       oldState.filter((item) => item !== skill)
     );
     setSkillData((oldState: string[]) => [...oldState, skill]);
@@ -126,66 +106,27 @@ const Skills = () => {
     setDeployData(deploySkills);
   };
 
-  const toggleFrontAll = (
-    e: React.MouseEvent<HTMLImageElement, MouseEvent>
+  //세터함수를 인자로 넘겨서 리팩토링
+  const toggleAllSkills = (
+    skillSet: string[],
+    skillList: string[],
+    skillSetter: React.Dispatch<React.SetStateAction<string[]>>,
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
-    if (frontData.length !== 0) {
-      setSkillData((oldState: string[]) => oldState.concat(frontData));
-      setFrontData([]);
-      console.log(frontData);
+    if (skillSet.length !== 0) {
+      setSkillData((oldState: string[]) => oldState.concat(skillSet));
+      skillSetter([]);
+      console.log(skillSet);
     } else {
-      setFrontData(frontSkills);
+      skillSetter(skillList);
       setSkillData((oldState: string[]) =>
-        oldState.filter((item) => !frontSkills.includes(item))
+        oldState.filter((item) => !skillList.includes(item))
       );
     }
     e.stopPropagation();
   };
 
-  const toggleBackAll = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
-    if (backData.length !== 0) {
-      setSkillData((oldState: string[]) => oldState.concat(backData));
-      setBackData([]);
-      console.log(backData);
-    } else {
-      setBackData(backSkills);
-      setSkillData((oldState: string[]) =>
-        oldState.filter((item) => !backSkills.includes(item))
-      );
-    }
-    e.stopPropagation();
-  };
-  const toggleVersionAll = (
-    e: React.MouseEvent<HTMLImageElement, MouseEvent>
-  ) => {
-    if (versionData.length !== 0) {
-      setSkillData((oldState: string[]) => oldState.concat(versionData));
-      setVersionData([]);
-      console.log(versionData);
-    } else {
-      setVersionData(versionSkills);
-      setSkillData((oldState: string[]) =>
-        oldState.filter((item) => !versionSkills.includes(item))
-      );
-    }
-    e.stopPropagation();
-  };
-  const toggleDeployAll = (
-    e: React.MouseEvent<HTMLImageElement, MouseEvent>
-  ) => {
-    if (deployData.length !== 0) {
-      setSkillData((oldState: string[]) => oldState.concat(deployData));
-      setDeployData([]);
-      console.log(deployData);
-    } else {
-      setDeployData(deploySkills);
-      setSkillData((oldState: string[]) =>
-        oldState.filter((item) => !deploySkills.includes(item))
-      );
-    }
-    e.stopPropagation();
-  };
-
+  //단순 함수라 리팩토링 안함
   const flipLeftCard = () => {
     setIfClickedLeft((oldState: boolean) => !oldState);
   };
@@ -222,7 +163,11 @@ const Skills = () => {
                 value={ifClickedLeft}
               >
                 <FrontSkillsWrapper>
-                  <InsideFrontSkillsTitle onClick={toggleFrontAll}>
+                  <InsideFrontSkillsTitle
+                    onClick={(e) =>
+                      toggleAllSkills(frontData, frontSkills, setFrontData, e)
+                    }
+                  >
                     {lanList.skills.frontend}
                   </InsideFrontSkillsTitle>
                   <InsideFrontSkillsWrapper>
@@ -231,7 +176,7 @@ const Skills = () => {
                         <Tilt key={index}>
                           <SkillImg
                             src={`/${skill}.png`}
-                            onClick={(e) => toggleFront(skill, e)}
+                            onClick={(e) => toggleSkill(skill, setFrontData, e)}
                           />
                         </Tilt>
                       );
@@ -239,7 +184,11 @@ const Skills = () => {
                   </InsideFrontSkillsWrapper>
                 </FrontSkillsWrapper>
                 <BackSkillsWrapper>
-                  <InsideBackSkillsTitle onClick={toggleBackAll}>
+                  <InsideBackSkillsTitle
+                    onClick={(e) =>
+                      toggleAllSkills(backData, backSkills, setBackData, e)
+                    }
+                  >
                     {lanList.skills.backend}
                   </InsideBackSkillsTitle>
                   <InsideBackSkillsWrapper>
@@ -248,7 +197,7 @@ const Skills = () => {
                         <Tilt key={index}>
                           <SkillImg
                             src={`/${skill}.png`}
-                            onClick={(e) => toggleBack(skill, e)}
+                            onClick={(e) => toggleSkill(skill, setBackData, e)}
                           />
                         </Tilt>
                       );
@@ -265,7 +214,16 @@ const Skills = () => {
                 value={ifClickedRight}
               >
                 <VersionSkillsWrapper>
-                  <InsideVersionSkillsTitle onClick={toggleVersionAll}>
+                  <InsideVersionSkillsTitle
+                    onClick={(e) =>
+                      toggleAllSkills(
+                        versionData,
+                        versionSkills,
+                        setVersionData,
+                        e
+                      )
+                    }
+                  >
                     {lanList.skills.version}
                   </InsideVersionSkillsTitle>
                   <InsideVersionSkillsWrapper>
@@ -275,7 +233,9 @@ const Skills = () => {
                           <SkillImg
                             key={index}
                             src={`/${skill}.png`}
-                            onClick={(e) => toggleVersion(skill, e)}
+                            onClick={(e) =>
+                              toggleSkill(skill, setVersionData, e)
+                            }
                           />
                         </Tilt>
                       );
@@ -283,7 +243,16 @@ const Skills = () => {
                   </InsideVersionSkillsWrapper>
                 </VersionSkillsWrapper>
                 <DeploySkillsWrapper>
-                  <InsideDeploySkillsTitle onClick={toggleDeployAll}>
+                  <InsideDeploySkillsTitle
+                    onClick={(e) =>
+                      toggleAllSkills(
+                        deployData,
+                        deploySkills,
+                        setDeployData,
+                        e
+                      )
+                    }
+                  >
                     {lanList.skills.deployment}
                   </InsideDeploySkillsTitle>
                   <InsideDeploySkillsWrapper>
@@ -293,7 +262,9 @@ const Skills = () => {
                           <SkillImg
                             key={index}
                             src={`/${skill}.png`}
-                            onClick={(e) => toggleDeploy(skill, e)}
+                            onClick={(e) =>
+                              toggleSkill(skill, setDeployData, e)
+                            }
                           />
                         </Tilt>
                       );
