@@ -11,63 +11,52 @@ import { ClickedType, EmptyType, NameType } from "../../dto";
 
 const insideLeftStyle = css`
   width: 600px;
-  height: 600px;
+  min-height: 600px;
+
   @media (max-width: 1800px) {
     width: 30vw;
   }
-  @media (max-width: 1427px) {
-    height: 800px;
-  }
-  @media (max-width: 980px) {
-    height: 700px;
-  }
   @media (max-width: 722px) {
     width: 70vw;
-    height: 500px;
     margin-bottom: 100px;
   }
-  @media (max-width: 476px) {
-    height: 600px;
-  }
-  @media (max-width: 428px) {
-    height: 700px;
+  @media (max-width: 276px) {
+    min-height: 650px;
   }
 `;
 
 const insideRightStyle = css`
-  width: 700px;
-  height: 400px;
+  width: 500px;
+  min-height: 200px;
+
   @media (max-width: 1800px) {
     width: 30vw;
   }
-  @media (max-width: 980px) {
-    height: 350px;
-  }
+
   @media (max-width: 862px) {
     width: 35vw;
   }
   @media (max-width: 722px) {
     width: 70vw;
-    height: 300px;
   }
   @media (max-width: 512px) {
-    height: 400px;
+    min-height: 300px;
   }
 `;
 
 export const SkillsWrapper = styled.div<NameType>`
   width: 100vw;
-  height: 1600px;
 
   ${verticalCenterStyle}
   background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
   @media (max-width: 722px) {
-    height: 2300px;
+    padding: 50px 0px;
   }
 `;
 
 export const SkillsArea = styled.div`
   padding: 50px 0px;
+  margin: 50px 0px;
 
   ${glassStyle};
   ${verticalCenterStyle};
@@ -87,17 +76,22 @@ export const SkillImg = styled.img`
     height: 50px;
     padding: 10px;
   }
+  @media (max-width: 340px) {
+    height: 40px;
+    padding: 10px;
+  }
 `;
 
 //선택 전 기술스택
 export const InsidePrevSkillsWrapper = styled.div`
   width: 70vw;
+  margin-top: 30px;
 
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  margin: 50px 0px;
+
   @media (max-width: 1800px) {
     width: 1000px;
   }
@@ -216,9 +210,7 @@ export const InsideBackSkillsTitle = styled.div`
   }
 `;
 export const InsideBackSkillsWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  ${horizontalCenterStyle};
   flex-wrap: wrap;
 `;
 
