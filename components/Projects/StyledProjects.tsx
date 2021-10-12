@@ -26,6 +26,7 @@ const linkStyle = css`
   font-size: 2.5rem;
   transition: 1s;
   cursor: pointer;
+  margin: 10px;
   @-webkit-keyframes rotate-center {
     0% {
       -webkit-transform: rotate(0);
@@ -52,6 +53,9 @@ const linkStyle = css`
     -webkit-animation: rotate-center 1s linear both;
     animation: rotate-center 1s linear both;
   }
+  @media (max-width: 400px) {
+    font-size: 2rem;
+  }
 `;
 export const ProjectsWrapper = styled.div<NameType>`
   display: flex;
@@ -61,18 +65,32 @@ export const ProjectsWrapper = styled.div<NameType>`
   height: 1200px;
   background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
   padding-top: 140px;
+  @media (max-width: 1364px) {
+    height: 1600px;
+  }
 `;
 
 export const ProjectsArea = styled.div`
-  width: 1800px;
-  height: 1100px;
   ${verticalCenterStyle}
+  max-width: 1600px;
+  @media (max-width: 1800px) {
+    width: 90vw;
+  }
+  @media (max-width: 1364px) {
+    height: 1500px;
+  }
 `;
 
 export const CarouselWrapper = styled.div`
-  width: 1800px;
-  height: 900px;
+  max-width: 1600px;
+
   ${horizontalCenterStyle}
+  @media (max-width: 1800px) {
+    width: 92vw;
+  }
+  @media (max-width: 1364px) {
+    height: 1400px;
+  }
 `;
 
 export const CarouselLeft = styled(IoIosArrowBack)`
@@ -87,11 +105,21 @@ export const CarouselRight = styled(IoIosArrowForward)`
 
 export const CarouselArea = styled.div`
   ${glassStyle}
-  width: 1600px;
+  max-width: 1400px;
   height: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1700px) {
+    width: 85vw;
+  }
+  width: 90vw;
+  @media (max-width: 1364px) {
+    height: 1400px;
+  }
+  @media (max-width: 470px) {
+    padding: 0px 20px;
+  }
 `;
 
 export const NestedProjectAreaA = styled.div<NumType>`
@@ -111,6 +139,13 @@ export const NestedProjectAreaC = styled.div<NumType>`
 
 export const ProjectTitle = styled.div`
   ${titleStyle};
+  @media (max-width: 829px) {
+    width: 70vw;
+  }
+  @media (max-width: 470px) {
+    width: 65vw;
+    font-size: 2rem;
+  }
 `;
 
 export const ProjectsContents = styled.div`
@@ -118,18 +153,60 @@ export const ProjectsContents = styled.div`
   justify-content: space-between;
   width: 1300px;
   height: 700px;
+  margin-top: 40px;
+  @media (max-width: 1800px) {
+    width: 78vw;
+  }
+  @media (max-width: 1364px) {
+    ${verticalCenterStyle};
+  }
+  @media (max-width: 1364px) {
+    height: 1100px;
+  }
+  @media (max-width: 670px) {
+    height: 1200px;
+  }
 `;
 
 export const ProjectsImgWrapper = styled.div`
   ${verticalCenterStyle};
   width: 500px;
   height: 500px;
+
+  @media (max-width: 600px) {
+    width: 70vw;
+  }
+  @media (max-width: 374px) {
+    height: 250px;
+  }
 `;
 
 export const ProjectsImg = styled.img`
-  height: 350px;
-  padding: 30px;
+  height: 300px;
+  padding: 20px;
   ${glassStyle}
+  @media (max-width: 1467px) {
+    height: 250px;
+  }
+  @media (max-width: 1364px) {
+    height: 350px;
+  }
+  @media (max-width: 826px) {
+    height: 250px;
+  }
+  @media (max-width: 628px) {
+    height: 200px;
+  }
+  @media (max-width: 531px) {
+    padding: 10px;
+    height: 150px;
+  }
+  @media (max-width: 423px) {
+    height: 130px;
+  }
+  @media (max-width: 354px) {
+    height: 100px;
+  }
 `;
 
 export const ProjectsImgController = styled.div`
@@ -141,6 +218,9 @@ export const ProjectsImgController = styled.div`
 export const ProjectsImgNum = styled.div`
   font-size: 1.3rem;
   color: white;
+  @media (max-width: 470px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ProjectsImgLeft = styled(IoIosArrowBack)`
@@ -156,45 +236,97 @@ export const ProjectsImgRight = styled(IoIosArrowForward)`
 export const ProjectsTextWrapper = styled.div`
   ${verticalCenterStyle};
   width: 600px;
-  height: 650px;
+
   ${glassStyle};
   margin-top: 80px;
   padding-bottom: 40px;
+  @media (max-width: 1467px) {
+    width: 550px;
+  }
+  @media (max-width: 1364px) {
+    width: 60vw;
+  }
+  @media (max-width: 735px) {
+    width: 70vw;
+  }
+  @media (max-width: 735px) {
+    padding-bottom: 20px;
+  }
+  @media (max-width: 595px) {
+  }
 `;
 
 export const ProjectsTextTitle = styled.div`
   ${insideTitleStyle};
+  @media (max-width: 614px) {
+    width: 60vw;
+  }
+  @media (max-width: 470px) {
+    font-size: 1.5rem;
+  }
 `;
 export const ProjectsIntroduction = styled.div`
-  width: 400px;
-  height: 320px;
+  padding: 20px;
+  margin: 10px 30px;
   font-size: 1.2rem;
   line-height: 1.6rem;
   font-weight: 300;
   color: white;
   ${glassStyle}
-  padding: 30px;
-  margin-bottom: 120px;
+
+  @media (max-width: 1467px) {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    padding: 15px 30px;
+  }
+  @media (max-width: 1364px) {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+  }
+  @media (max-width: 600px) {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    padding: 15px;
+    margin: 10px 5px;
+  }
+
+  @media (max-width: 374px) {
+    font-size: 0.8rem;
+  }
+`;
+
+export const ProjectsBottomeWrapper = styled.div`
+  ${horizontalCenterStyle};
+  @media (max-width: 735px) {
+    ${verticalCenterStyle}
+    flex-direction: column-reverse;
+  }
 `;
 
 export const ProjectsStackWrapper = styled.div`
-  position: absolute;
-  left: 250px;
-  bottom: 90px;
-  width: 400px;
-  height: 50px;
   font-size: 1.3rem;
   font-weight: 600;
   color: black;
+  @media (max-width: 1467px) {
+    font-size: 1.1rem;
+  }
+  @media (max-width: 1318px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 735px) {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  @media (max-width: 484px) {
+    font-size: 1rem;
+  }
+  @media (max-width: 420px) {
+    font-size: 0.8rem;
+  }
 `;
 export const ProjectsLinkWrapper = styled.div`
-  width: 200px;
-  height: 80px;
   color: black;
   ${horizontalCenterStyle}
-  position: absolute;
-  left: 50px;
-  bottom: 60px;
 `;
 
 export const ProjectsGit = styled(AiOutlineGithub)`
@@ -219,6 +351,10 @@ export const CarouselDot = styled.div`
   border-radius: 50%;
   background-color: #ffffffcc;
   cursor: pointer;
+  @media (max-width: 400px) {
+    width: 10px;
+    height: 10px;
+  }
 `;
 
 export const ProjectsLink = styled(LinkN)`

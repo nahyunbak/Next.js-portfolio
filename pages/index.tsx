@@ -25,6 +25,8 @@ export default function Home() {
           <Greet />
           <About />
           <Skills />
+          <Projects />
+          <Footer />
         </ParallaxProvider>
       </RecoilRoot>
     </>

@@ -15,6 +15,9 @@ export const FooterWrapper = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 797px) {
+    height: 200px;
+  }
 `;
 
 export const FooterArea = styled.div`
@@ -22,6 +25,10 @@ export const FooterArea = styled.div`
   height: 300px;
   ${verticalCenterStyle}
   margin-bottom: 40px;
+  @media (max-width: 797px) {
+    height: 200px;
+    width: 70vw;
+  }
 `;
 
 export const FooterLinkImgWrapper = styled.div`

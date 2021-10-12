@@ -55,7 +55,8 @@ export const SkillsWrapper = styled.div<NameType>`
 
 export const SkillsArea = styled.div`
   padding: 50px 0px;
-  margin: 50px 0px;
+  margin: 100px 0px;
+  max-width: 1600px;
 
   ${glassStyle};
   ${verticalCenterStyle};
@@ -90,9 +91,10 @@ export const InsidePrevSkillsWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  max-width: 1000px;
 
   @media (max-width: 1800px) {
-    width: 1000px;
+    width: 1100px;
   }
   @media (max-width: 1077px) {
     width: 70vw;
@@ -110,7 +112,7 @@ export const NextSkillsWrapper = styled.div<EmptyType>`
   padding-bottom: 50px;
   margin-top: ${(props) => (props.ifEmpty ? "0px" : "100px")};
   ${horizontalCenterStyle};
-  width: 1600px;
+  width: 1300px;
 
   @media (max-width: 1800px) {
     width: 80vw;

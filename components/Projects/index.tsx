@@ -13,6 +13,7 @@ import {
   NestedProjectAreaB,
   NestedProjectAreaC,
   ProjectsArea,
+  ProjectsBottomeWrapper,
   ProjectsContents,
   ProjectsDeploy,
   ProjectsGit,
@@ -144,23 +145,25 @@ const Projects = () => {
 
                       <br />
                     </ProjectsIntroduction>
-                    <ProjectsStackWrapper>
-                      <br /> {lanList.projects.first.skillStack}
-                      <br />
-                      <br />
-                      {lanList.projects.first.deployStack}
-                    </ProjectsStackWrapper>
-                    <ProjectsLinkWrapper>
-                      <GlobalLink href="https://github.com/nahyunbak/Next.js-portfolio">
-                        <ProjectsGit />
-                      </GlobalLink>
-                      <GlobalLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
-                        <ProjectsVelog />
-                      </GlobalLink>
-                      <GlobalLink href="www.nahyunbak.me">
-                        <ProjectsDeploy />
-                      </GlobalLink>
-                    </ProjectsLinkWrapper>
+                    <ProjectsBottomeWrapper>
+                      <ProjectsLinkWrapper>
+                        <GlobalLink href="https://github.com/nahyunbak/Next.js-portfolio">
+                          <ProjectsGit />
+                        </GlobalLink>
+                        <GlobalLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
+                          <ProjectsVelog />
+                        </GlobalLink>
+                        <GlobalLink href="www.nahyunbak.me">
+                          <ProjectsDeploy />
+                        </GlobalLink>
+                      </ProjectsLinkWrapper>
+                      <ProjectsStackWrapper>
+                        <br /> {lanList.projects.first.skillStack}
+                        <br />
+                        <br />
+                        {lanList.projects.first.deployStack}
+                      </ProjectsStackWrapper>
+                    </ProjectsBottomeWrapper>
                   </ProjectsTextWrapper>
                 </ProjectsContents>
               </NestedProjectAreaA>
@@ -225,23 +228,25 @@ const Projects = () => {
                       <br />
                       {lanList.projects.second.projectText4}
                     </ProjectsIntroduction>
-                    <ProjectsStackWrapper>
-                      <br />
-                      {lanList.projects.second.skillStack}
-                      <br />
-                      <br /> {lanList.projects.second.deployStack}
-                    </ProjectsStackWrapper>
-                    <ProjectsLinkWrapper>
-                      <GlobalLink href="https://github.com/nahyunbak/react-portfolio-ballet">
-                        <ProjectsGit />
-                      </GlobalLink>
-                      <GlobalLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
-                        <ProjectsVelog />
-                      </GlobalLink>
-                      <GlobalLink href="https://silly-meninsky-e1fc3e.netlify.app/">
-                        <ProjectsDeploy />
-                      </GlobalLink>
-                    </ProjectsLinkWrapper>
+                    <ProjectsBottomeWrapper>
+                      <ProjectsLinkWrapper>
+                        <GlobalLink href="https://github.com/nahyunbak/react-portfolio-ballet">
+                          <ProjectsGit />
+                        </GlobalLink>
+                        <GlobalLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
+                          <ProjectsVelog />
+                        </GlobalLink>
+                        <GlobalLink href="https://silly-meninsky-e1fc3e.netlify.app/">
+                          <ProjectsDeploy />
+                        </GlobalLink>
+                      </ProjectsLinkWrapper>
+                      <ProjectsStackWrapper>
+                        <br />
+                        {lanList.projects.second.skillStack}
+                        <br />
+                        <br /> {lanList.projects.second.deployStack}
+                      </ProjectsStackWrapper>
+                    </ProjectsBottomeWrapper>
                   </ProjectsTextWrapper>
                 </ProjectsContents>
               </NestedProjectAreaB>
@@ -292,24 +297,26 @@ const Projects = () => {
                       <br />
                       {lanList.projects.third.projectText4}
                     </ProjectsIntroduction>
-                    <ProjectsStackWrapper>
-                      <br />
-                      {lanList.projects.third.skillStack}
-                      <br />
-                      <br />
-                      {lanList.projects.third.deployStack}
-                    </ProjectsStackWrapper>
-                    <ProjectsLinkWrapper>
-                      <GlobalLink href="https://github.com/nahyunbak/nestjs-writingapp-backend">
-                        <ProjectsGit />
-                      </GlobalLink>
-                      <GlobalLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
-                        <ProjectsVelog />
-                      </GlobalLink>
-                      <GlobalLink href="silly-meninsky-e1fc3e.netlify.app">
-                        <ProjectsDeploy />
-                      </GlobalLink>
-                    </ProjectsLinkWrapper>
+                    <ProjectsBottomeWrapper>
+                      <ProjectsLinkWrapper>
+                        <GlobalLink href="https://github.com/nahyunbak/nestjs-writingapp-backend">
+                          <ProjectsGit />
+                        </GlobalLink>
+                        <GlobalLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
+                          <ProjectsVelog />
+                        </GlobalLink>
+                        <GlobalLink href="silly-meninsky-e1fc3e.netlify.app">
+                          <ProjectsDeploy />
+                        </GlobalLink>
+                      </ProjectsLinkWrapper>
+                      <ProjectsStackWrapper>
+                        <br />
+                        {lanList.projects.third.skillStack}
+                        <br />
+                        <br />
+                        {lanList.projects.third.deployStack}
+                      </ProjectsStackWrapper>
+                    </ProjectsBottomeWrapper>
                   </ProjectsTextWrapper>
                 </ProjectsContents>
               </NestedProjectAreaC>
