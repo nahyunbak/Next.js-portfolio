@@ -1,4 +1,3 @@
-import { Obj1, Obj2 } from "../components/GlobalStyle";
 import Header from "../components/Header";
 import Greet from "../components/Greet";
 import About from "../components/About";
@@ -32,14 +31,3 @@ export default function Home() {
     </>
   );
 }
-
-/*
-      <Header />
-    <Greet />
-          <Obj1></Obj1>
-          <Obj2></Obj2>
-          <About />
-          <Skills />
-          <Projects />
-          <Footer />
-    */
