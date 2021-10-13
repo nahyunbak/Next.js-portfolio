@@ -28,15 +28,15 @@ const fishAnimation = css`
       opacity: 0;
     }
     49% {
-      transform: translateX(2300px) rotate(-10deg) scaleX(-1);
+      transform: translateX(2800px) rotate(-10deg) scaleX(-1);
       opacity: 1;
     }
     50% {
-      transform: translateX(2300px) rotate(-10deg) scaleX(-1);
+      transform: translateX(2800px) rotate(-10deg) scaleX(-1);
       opacity: 1;
     }
     51% {
-      transform: translateX(2300px) rotate(0deg);
+      transform: translateX(2800px) rotate(0deg);
       opacity: 0;
     }
     100% {
@@ -52,15 +52,15 @@ const fishAnimation2 = css`
       opacity: 0;
     }
     49% {
-      transform: translateX(2300px) rotate(-10deg);
+      transform: translateX(2800px) rotate(-10deg);
       opacity: 1;
     }
     50% {
-      transform: translateX(2300px) rotate(-10deg);
+      transform: translateX(2800px) rotate(-10deg);
       opacity: 1;
     }
     51% {
-      transform: translateX(2300px) rotate(0deg) scaleX(-1);
+      transform: translateX(2800px) rotate(0deg) scaleX(-1);
       opacity: 0;
     }
     100% {
