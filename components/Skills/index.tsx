@@ -18,6 +18,16 @@ import {
   InsideVersionSkillsTitle,
   InsideVersionSkillsWrapper,
   NextSkillsWrapper,
+  ObjFlower,
+  ObjFlower10,
+  ObjFlower2,
+  ObjFlower3,
+  ObjFlower4,
+  ObjFlower5,
+  ObjFlower6,
+  ObjFlower7,
+  ObjFlower8,
+  ObjFlower9,
   SkillImg,
   SkillsArea,
   SkillsWrapper,
@@ -137,6 +147,17 @@ const Skills = () => {
 
   return (
     <SkillsWrapper name="skills">
+      <ObjFlower src="/background/flower2.png" />
+      <ObjFlower2 src="/background/flower9.png" />
+      <ObjFlower3 src="/background/flower3.png" />
+      <ObjFlower4 src="/background/flower6.png" />
+      <ObjFlower5 src="/background/flower8.png" />
+      <ObjFlower6 src="/background/flower9.png" />
+      <ObjFlower7 src="/background/flower6.png" />
+      <ObjFlower8 src="/background/flower2.png" />
+      <ObjFlower9 src="/background/flower3.png" />
+      <ObjFlower10 src="/background/flower8.png" />
+
       <SkillsArea data-aos="fade-up">
         <Tilt>
           <InsidePrevSkillsTitle onClick={toggleSkillsAll}>

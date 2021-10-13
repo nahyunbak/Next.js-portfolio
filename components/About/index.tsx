@@ -16,6 +16,12 @@ import {
   AboutTitle,
   AboutUnivCardWrapper,
   AboutWrapper,
+  ObjFish1,
+  ObjFish2,
+  ObjFish3,
+  ObjFish4,
+  ObjFish5,
+  ObjWhale,
 } from "./StyledHome";
 import Tilt from "react-parallax-tilt";
 import { Parallax } from "react-scroll-parallax";
@@ -27,6 +33,12 @@ const About = () => {
   const lanList = useRecoilValue(lanState);
   return (
     <AboutWrapper name="aboutme">
+      <ObjWhale src="/background/whale.png" />
+      <ObjFish1 src="/background/fish1.png" />
+      <ObjFish2 src="/background/fish1.png" />
+      <ObjFish3 src="/background/fish1.png" />
+      <ObjFish4 src="/background/fish3.png" />
+      <ObjFish5 src="/background/fish5.png" />
       <AboutArea data-aos="fade-up">
         <Tilt>
           <AboutTitle>ABOUT</AboutTitle>

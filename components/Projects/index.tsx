@@ -12,6 +12,9 @@ import {
   NestedProjectAreaA,
   NestedProjectAreaB,
   NestedProjectAreaC,
+  ObjMoon,
+  ObjRabbit,
+  ObjRabbit2,
   ProjectsArea,
   ProjectsBottomeWrapper,
   ProjectsContents,
@@ -91,6 +94,9 @@ const Projects = () => {
   return (
     <>
       <ProjectsWrapper name="projects">
+        <ObjMoon src="/background/moon.png" />
+        <ObjRabbit src="/background/rabbit2.png" />
+        <ObjRabbit2 src="/background/rabbit8.png" />
         <ProjectsArea data-aos="fade-up">
           <CarouselWrapper>
             <CarouselLeft onClick={decreasePageNum} />

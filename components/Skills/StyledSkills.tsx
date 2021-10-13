@@ -45,9 +45,11 @@ const insideRightStyle = css`
 `;
 
 export const SkillsWrapper = styled.div<NameType>`
+  overflow: hidden;
+  position: relative;
   width: 100vw;
   ${verticalCenterStyle}
-  background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
   @media (max-width: 722px) {
     padding: 50px 0px;
   }
@@ -60,6 +62,117 @@ export const SkillsArea = styled.div`
 
   ${glassStyle};
   ${verticalCenterStyle};
+`;
+
+const flowerAnimation = css`
+  @keyframes animateFlower {
+    0% {
+      transform: translateY(-100px) rotate(0deg);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(1600px) rotate(1440deg) scale(1.3);
+      opacity: 0;
+    }
+  }
+`;
+export const ObjFlower = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 10vw;
+  top: -50px;
+  animation: animateFlower 40s linear infinite;
+
+  ${flowerAnimation}
+`;
+
+export const ObjFlower2 = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 30vw;
+  top: -50px;
+  animation: animateFlower 43s linear infinite;
+
+  ${flowerAnimation}
+`;
+export const ObjFlower3 = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 40vw;
+  top: -50px;
+  animation: animateFlower 50s linear infinite;
+  animation-delay: 10s;
+
+  ${flowerAnimation}
+`;
+export const ObjFlower4 = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 20vw;
+  top: -50px;
+  animation: animateFlower 60s linear infinite;
+  animation-delay: 55s;
+
+  ${flowerAnimation}
+`;
+export const ObjFlower5 = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 60vw;
+  top: -50px;
+  animation: animateFlower 37s linear infinite;
+  animation-delay: 30s;
+  ${flowerAnimation}
+`;
+export const ObjFlower6 = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 70vw;
+  top: -50px;
+  animation: animateFlower 56s linear infinite;
+  animation-delay: 15s;
+  ${flowerAnimation}
+`;
+
+export const ObjFlower7 = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 80vw;
+  top: -50px;
+  animation: animateFlower 52s linear infinite;
+  animation-delay: 20s;
+  ${flowerAnimation}
+`;
+
+export const ObjFlower8 = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 90vw;
+  top: -50px;
+  animation: animateFlower 60s linear infinite;
+  animation-delay: 40s;
+  ${flowerAnimation}
+`;
+
+export const ObjFlower9 = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 65vw;
+  top: -50px;
+  animation: animateFlower 47s linear infinite;
+  animation-delay: 35s;
+  ${flowerAnimation}
+`;
+
+export const ObjFlower10 = styled.img`
+  position: absolute;
+  height: 50px;
+  left: 50vw;
+  top: -50px;
+  animation: animateFlower 64s linear infinite;
+  animation-delay: 45s;
+  ${flowerAnimation}
 `;
 
 export const SkillImg = styled.img`

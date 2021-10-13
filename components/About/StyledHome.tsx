@@ -16,6 +16,103 @@ import {
 import { IoCallSharp } from "react-icons/io5";
 import { NameType } from "../../dto";
 
+//백그라운드 이미지
+
+const fishAnimation = css`
+  position: absolute;
+  height: 100px;
+
+  @keyframes animateFish1 {
+    0% {
+      transform: translateX(-100px) rotate(0deg) scaleX(-1);
+      opacity: 0;
+    }
+    49% {
+      transform: translateX(2300px) rotate(-10deg) scaleX(-1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(2300px) rotate(-10deg) scaleX(-1);
+      opacity: 1;
+    }
+    51% {
+      transform: translateX(2300px) rotate(0deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-100px) rotate(10deg);
+      opacity: 1;
+    }
+  }
+`;
+const fishAnimation2 = css`
+  @keyframes animateFish2 {
+    0% {
+      transform: translateX(-1000px) rotate(0deg);
+      opacity: 0;
+    }
+    49% {
+      transform: translateX(2300px) rotate(-10deg);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(2300px) rotate(-10deg);
+      opacity: 1;
+    }
+    51% {
+      transform: translateX(2300px) rotate(0deg) scaleX(-1);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-1500px) rotate(10deg) scaleX(-1);
+      opacity: 1;
+    }
+  }
+`;
+export const ObjWhale = styled.img`
+  position: absolute;
+
+  height: 900px;
+  left: -200px;
+  top: 10px;
+  animation: animateFish2 80s ease-in-out infinite;
+
+  ${fishAnimation2}
+`;
+
+export const ObjFish1 = styled.img`
+  left: -200px;
+  bottom: 400px;
+  animation: animateFish1 80s ease-in-out infinite;
+  ${fishAnimation}
+`;
+
+export const ObjFish2 = styled.img`
+  animation: animateFish1 55s ease-in-out infinite;
+  ${fishAnimation}
+  left: -200px;
+`;
+
+export const ObjFish3 = styled.img`
+  animation: animateFish1 65s linear infinite;
+  ${fishAnimation}
+  left: -200px;
+  bottom: 600px;
+`;
+
+export const ObjFish4 = styled.img`
+  animation: animateFish1 60s linear infinite;
+  ${fishAnimation}
+  left: -200px;
+  bottom: 300px;
+`;
+
+export const ObjFish5 = styled.img`
+  animation: animateFish2 75s linear infinite;
+  ${fishAnimation2}
+  left: -200px;
+  bottom: 300px;
+`;
 const AboutIconSize = css`
   font-size: 1.3rem;
   padding: 10px;
@@ -76,6 +173,8 @@ const AboutCardStyle = css`
 `;
 
 export const AboutWrapper = styled.div<NameType>`
+  position: relative;
+  overflow: hidden;
   width: 100vw;
   height: 1000px;
   background-image: linear-gradient(

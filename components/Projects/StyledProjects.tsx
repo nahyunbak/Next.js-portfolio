@@ -65,9 +65,115 @@ export const ProjectsWrapper = styled.div<NameType>`
   height: 1200px;
   background-image: linear-gradient(to top, #f43b47 0%, #453a94 100%);
   padding-top: 140px;
+  position: relative;
+  overflow: hidden;
   @media (max-width: 1364px) {
     height: 1600px;
   }
+`;
+
+const MoonAnimation = css`
+  @keyframes animateMoon {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    50% {
+      transform: rotate(20deg) scale(1.1);
+      opacity: 1.2;
+    }
+    100% {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
+  }
+`;
+
+const RabbitAnimation = css`
+  @keyframes animateRabbit {
+    0% {
+      transform: translateX(-300px) rotate(0deg) scaleX(-1);
+      opacity: 0;
+    }
+    49% {
+      transform: translateX(120vw) translateY(500px) rotate(-10deg) scaleX(-1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(120vw) translateY(500px) rotate(-10deg) scaleX(-1);
+      opacity: 1;
+    }
+    51% {
+      transform: translateX(120vw) translateY(500px) rotate(0deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-300px) rotate(10deg);
+      opacity: 1;
+    }
+  }
+`;
+
+const RabbitAnimation2 = css`
+  @keyframes animateRabbit2 {
+    0% {
+      transform: translateX(-300px);
+      opacity: 0.5;
+    }
+    15% {
+      transform: translateX(40vw) scaleX(-1);
+      opacity: 1;
+    }
+    49% {
+      transform: translateX(115vw) scaleX(-1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(115vw) scaleX(-1);
+      opacity: 0.5;
+    }
+    51% {
+      transform: translateX(115vw) scaleX(-1);
+      opacity: 1;
+    }
+    85% {
+      transform: translateX(40vw) scaleX(-1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-300px);
+      opacity: 0.5;
+    }
+  }
+`;
+export const ObjMoon = styled.img`
+  position: absolute;
+  width: 50vw;
+  max-width: 600px;
+  left: 5vw;
+  top: 100px;
+  animation: animateMoon 20s linear infinite;
+
+  ${MoonAnimation}
+`;
+
+export const ObjRabbit = styled.img`
+  position: absolute;
+  width: 300px;
+  left: 5vw;
+  top: 30%;
+  animation: animateRabbit 60s linear infinite;
+
+  ${RabbitAnimation}
+`;
+
+export const ObjRabbit2 = styled.img`
+  position: absolute;
+  width: 300px;
+  left: -5vw;
+  bottom: 0px;
+  animation: animateRabbit2 70s ease-in-out infinite;
+  ${RabbitAnimation2}
+  animation-delay: 20s;
 `;
 
 export const ProjectsArea = styled.div`
@@ -95,12 +201,12 @@ export const CarouselWrapper = styled.div`
 
 export const CarouselLeft = styled(IoIosArrowBack)`
   font-size: 3rem;
-  color: white;
+  color: #250707;
 `;
 
 export const CarouselRight = styled(IoIosArrowForward)`
   font-size: 3rem;
-  color: white;
+  color: #250707;
 `;
 
 export const CarouselArea = styled.div`

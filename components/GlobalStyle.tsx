@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 
 import LinkN from "next/link";
 import { Link as Links } from "react-scroll";
+import Image from "next/image";
 export const BodyWrapper = styled.div`
   width: 100vw;
   height: 140vh;
@@ -12,25 +13,6 @@ export const BodyWrapper2 = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
-`;
-
-export const Obj1 = styled.div`
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  position: absolute;
-  top: -500px;
-`;
-
-export const Obj2 = styled.div`
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
-  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
-  margin-top: -400px;
-  opacity: 0.5;
-  position: absolute;
 `;
 
 export const glassStyle = css`

@@ -17,6 +17,25 @@ const textAnimationStyle = css`
   animation: fadein 3s;
   animation-fill-mode: forwards;
 `;
+
+const circleAnimation = css`
+  @keyframes animateCircle {
+    0% {
+      transform: translateY(500px);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-2000px);
+      opacity: 0.5;
+    }
+  }
+`;
+const objStyle = css`
+  border-radius: 50%;
+  position: absolute;
+`;
+
 export const HomeWrapper = styled.div<NameType>`
   width: 100%;
   height: 1200px;
@@ -25,12 +44,59 @@ export const HomeWrapper = styled.div<NameType>`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: -130px;
+  top: -130px;
+  position: relative;
+  overflow: hidden;
+`;
+
+export const Obj1 = styled.div`
+  animation: animateCircle 40s linear infinite;
+  max-width: 500px;
+  max-height: 500px;
+  width: 25vw;
+  height: 25vw;
+  ${circleAnimation}
+  ${objStyle}
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  left: 10vw;
+  bottom: -250px;
+  z-index: 1;
+`;
+
+export const Obj2 = styled.div`
+  animation: animateCircle 50s linear infinite;
+  animation-delay: 10s;
+  ${circleAnimation}
+  ${objStyle}
+  min-width: 300px;
+  min-height: 300px;
+  width: 30vw;
+  height: 30vw;
+  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+  opacity: 0.5;
+  bottom: -30vw;
+  z-index: 1;
+`;
+
+export const Obj3 = styled.div`
+  animation: animateCircle 20s linear infinite;
+  ${circleAnimation}
+  ${objStyle}
+  max-width: 300px;
+  max-height: 300px;
+  width: 30vw;
+  height: 30vw;
+
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+  right: -10vw;
+  bottom: -30vw;
+  z-index: 1;
 `;
 
 export const HomeContentsWrapper = styled.div`
   width: 1200px;
   height: 750px;
+
   padding: 20px 50px;
 
   margin-top: 10px;

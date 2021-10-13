@@ -18,6 +18,9 @@ import {
   HomeWomanImg,
   HomeWrapper,
   MailIcon,
+  Obj1,
+  Obj2,
+  Obj3,
   ProfileDetail,
   ProfileDetailWrapper,
   ProfileImg,
@@ -32,6 +35,9 @@ const Greet = () => {
   const lanList = useRecoilValue(lanState);
   return (
     <HomeWrapper name="greet">
+      <Obj1 />
+      <Obj2 />
+      <Obj3 />
       <HomeContentsWrapper>
         <HomeTextWrapper>
           <HomeTitleArea>
