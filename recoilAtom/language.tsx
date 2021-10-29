@@ -73,7 +73,19 @@ export const koreanState = {
       projectText4:
         "조만간 RDBMS와 다양한 인증 전략을 사용하여 TDD방식으로 다시 개발하고자 합니다.",
       skillStack: "✔ 사용 기술: Nest.js, MongoDB",
-      deployStack: "✔ 배포: AWS EC2, Linux, NGINX",
+      deployStack: "✔ 배포: AWS EC2, pm2",
+    },
+    fourth: {
+      projectTitle: "고양이 잡기 게임",
+      projectText1:
+        "Next.js와 타입스크립트,  Recoil을 사용해 제작하였으며 Vercel을 이용해 배포했습니다.",
+      projectText2:
+        "개인적으로 많은 고민거리를 던져준 프로젝트이자, 가장 기술적으로 성장했다고 생각하는 프로젝트입니다. ",
+      projectText3:
+        "이 프로젝트를 통해 localstorage 사용 방법과 컴포넌트 생애주기론, 그리고 함수형 프로그래밍을 배웠습니다. 또한 이전에는 깨닫지 못했던, 액션함수의 필요성을 절감하는 계기가 되었습니다.",
+
+      skillStack: "✔ 사용 기술: TS, Next.js, Recoil",
+      deployStack: "✔ 배포: AWS EC2, pm2",
     },
   },
 };
@@ -146,6 +158,17 @@ export const englishState = {
         "So in the near future I am going to revise it in a TDD way using RDBMS and various advanced authentication strategies.",
       skillStack: "✔ Skills: Nest.js, MongoDB",
       deployStack: "✔ Deployment: AWS EC2, NGINX",
+    },
+    fourth: {
+      projectTitle: "Catch cat game",
+      projectText1:
+        "This is a project made by Next.js and Recoil, deployed by Vercel",
+      projectText2:
+        "I learned a lot by this project, such as how to use localStorage, component life cycle, functional programming",
+      projectText3:
+        "Also importance of defining action function , which I did not realize before ",
+      skillStack: "✔ Skills: TS, Next.js, Recoil",
+      deployStack: "✔ Deployment: AWS EC2, pm2",
     },
   },
 };

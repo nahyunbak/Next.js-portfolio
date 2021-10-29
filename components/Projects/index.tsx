@@ -12,6 +12,7 @@ import {
   NestedProjectAreaA,
   NestedProjectAreaB,
   NestedProjectAreaC,
+  NestedProjectAreaD,
   ObjMoon,
   ObjRabbit,
   ObjRabbit2,
@@ -36,6 +37,8 @@ import {
   ProjectTitle,
 } from "./StyledProjects";
 
+import MediaQuery from "react-responsive";
+
 //nested 프로젝트가 반복되며, props의 값에 따라 display 가 정해진다.
 const Projects = () => {
   const lanList = useRecoilValue(lanState);
@@ -46,6 +49,7 @@ const Projects = () => {
   const maxNumA = 3;
   const maxNumB = 5;
   const maxNumC = 2;
+  const maxNumD = 5;
 
   const increasePageNum = useCallback(() => {
     if (pageNum !== maxNum) {
@@ -156,7 +160,7 @@ const Projects = () => {
                         <GlobalLink href="https://github.com/nahyunbak/Next.js-portfolio">
                           <ProjectsGit />
                         </GlobalLink>
-                        <GlobalLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
+                        <GlobalLink href="https://velog.io/@nahyunbak/%EC%9E%90%EA%B8%B0%EC%86%8C%EA%B0%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%9C%A0%EB%A6%AC%EC%B0%BD-%EB%84%88%EB%A8%B8%EC%9D%98-%EC%84%B8%EA%B3%84-%EA%B8%B0%ED%9A%8D">
                           <ProjectsVelog />
                         </GlobalLink>
                         <GlobalLink href="www.nahyunbak.me">
@@ -239,10 +243,10 @@ const Projects = () => {
                         <GlobalLink href="https://github.com/nahyunbak/react-portfolio-ballet">
                           <ProjectsGit />
                         </GlobalLink>
-                        <GlobalLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
+                        <GlobalLink href="https://velog.io/@nahyunbak/%EA%B5%AC%EB%B2%84%EC%A0%BC-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EB%B0%9C%EB%A0%88%EC%99%80-%EB%82%98">
                           <ProjectsVelog />
                         </GlobalLink>
-                        <GlobalLink href="https://silly-meninsky-e1fc3e.netlify.app/">
+                        <GlobalLink href="https://hardcore-payne-0d55d3.netlify.app/">
                           <ProjectsDeploy />
                         </GlobalLink>
                       </ProjectsLinkWrapper>
@@ -305,13 +309,13 @@ const Projects = () => {
                     </ProjectsIntroduction>
                     <ProjectsBottomeWrapper>
                       <ProjectsLinkWrapper>
-                        <GlobalLink href="https://github.com/nahyunbak/nestjs-writingapp-backend">
+                        <GlobalLink href="https://github.com/nahyunbak/writing-app-frontend">
                           <ProjectsGit />
                         </GlobalLink>
-                        <GlobalLink href="https://velog.io/@nahyunbak/Next.js%EC%99%80-TS-%EA%B8%80%EB%9E%98%EC%8A%A4%EB%AA%A8%ED%94%BC%EC%A6%98%EC%9C%BC%EB%A1%9C-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%A0%9C%EC%9E%91%ED%95%98%EA%B8%B0-1-%EA%B5%AC%EC%83%81">
+                        <GlobalLink href="https://github.com/nahyunbak/writing-app-frontend">
                           <ProjectsVelog />
                         </GlobalLink>
-                        <GlobalLink href="silly-meninsky-e1fc3e.netlify.app">
+                        <GlobalLink href="https://github.com/nahyunbak/writing-app-frontend">
                           <ProjectsDeploy />
                         </GlobalLink>
                       </ProjectsLinkWrapper>
@@ -326,6 +330,89 @@ const Projects = () => {
                   </ProjectsTextWrapper>
                 </ProjectsContents>
               </NestedProjectAreaC>
+
+              <NestedProjectAreaD pageNum={pageNum}>
+                <ProjectTitle>PROJECTS</ProjectTitle>
+                <ProjectsContents>
+                  <ProjectsImgWrapper>
+                    {portfolioImgNum === 1 ? (
+                      <ProjectsImg src={`/projects/portfolioD1.jpg`} />
+                    ) : (
+                      ""
+                    )}
+                    {portfolioImgNum === 2 ? (
+                      <ProjectsImg src={`/projects/portfolioD2.jpg`} />
+                    ) : (
+                      ""
+                    )}
+                    {portfolioImgNum === 3 ? (
+                      <ProjectsImg src={`/projects/portfolioD3.jpg`} />
+                    ) : (
+                      ""
+                    )}
+                    {portfolioImgNum === 4 ? (
+                      <ProjectsImg src={`/projects/portfolioD4.jpg`} />
+                    ) : (
+                      ""
+                    )}
+                    {portfolioImgNum === 5 ? (
+                      <ProjectsImg src={`/projects/portfolioD5.jpg`} />
+                    ) : (
+                      ""
+                    )}
+
+                    <ProjectsImgController>
+                      <ProjectsImgLeft
+                        onClick={(e) => {
+                          decreasePortfolioImg(maxNumD);
+                        }}
+                      />
+                      <ProjectsImgNum>
+                        {portfolioImgNum} / {maxNumD}
+                      </ProjectsImgNum>
+                      <ProjectsImgRight
+                        onClick={(e) => {
+                          increasePortfolioImg(maxNumD);
+                        }}
+                      />
+                    </ProjectsImgController>
+                  </ProjectsImgWrapper>
+                  <ProjectsTextWrapper>
+                    <ProjectsTextTitle>
+                      {lanList.projects.fourth.projectTitle}
+                    </ProjectsTextTitle>
+                    <ProjectsIntroduction>
+                      <br />
+                      {lanList.projects.fourth.projectText1}
+                      <br />
+                      <br />
+                      {lanList.projects.fourth.projectText2}
+                      <br />
+                      <br /> {lanList.projects.fourth.projectText3}
+                    </ProjectsIntroduction>
+                    <ProjectsBottomeWrapper>
+                      <ProjectsLinkWrapper>
+                        <GlobalLink href="https://github.com/nahyunbak/Next.js-portfolio-Cat-game">
+                          <ProjectsGit />
+                        </GlobalLink>
+                        <GlobalLink href="https://velog.io/@nahyunbak/js%EA%B2%8C%EC%9E%84-%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%ED%99%94%EC%9E%A5%ED%92%88%EC%9C%BC%EB%A1%9C-%EA%B3%A0%EC%96%91%EC%9D%B4%EB%A5%BC-%EA%BC%AC%EC%85%94%EB%B3%B4%EC%95%98%EC%8A%B5%EB%8B%88%EB%8B%A4%EB%A7%8C-%EA%B2%B0%EA%B3%BC%EB%AC%BC">
+                          <ProjectsVelog />
+                        </GlobalLink>
+                        <GlobalLink href="https://next-js-portfolio-cat-game-phi.vercel.app/">
+                          <ProjectsDeploy />
+                        </GlobalLink>
+                      </ProjectsLinkWrapper>
+                      <ProjectsStackWrapper>
+                        <br />
+                        {lanList.projects.fourth.skillStack}
+                        <br />
+                        <br />
+                        {lanList.projects.fourth.deployStack}
+                      </ProjectsStackWrapper>
+                    </ProjectsBottomeWrapper>
+                  </ProjectsTextWrapper>
+                </ProjectsContents>
+              </NestedProjectAreaD>
             </CarouselArea>
             <CarouselRight onClick={increasePageNum} />
           </CarouselWrapper>
@@ -343,6 +430,11 @@ const Projects = () => {
             <CarouselDot
               onClick={(e) => {
                 movePageNum(3);
+              }}
+            />
+            <CarouselDot
+              onClick={(e) => {
+                movePageNum(4);
               }}
             />
           </CarouselController>

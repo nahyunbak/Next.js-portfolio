@@ -71,7 +71,6 @@ const fishAnimation2 = css`
 `;
 export const ObjWhale = styled.img`
   position: absolute;
-
   height: 900px;
   left: -200px;
   top: 10px;
@@ -240,6 +239,9 @@ export const AboutContentsWrapper = styled.div`
   ${horizontalCenterStyle};
   flex-wrap: wrap;
   @media (max-width: 1400px) {
+    width: 1100px;
+  }
+  @media (max-width: 1333px) {
     width: 100%;
   }
   @media (max-width: 900px) {

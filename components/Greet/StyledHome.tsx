@@ -96,9 +96,7 @@ export const Obj3 = styled.div`
 export const HomeContentsWrapper = styled.div`
   width: 1200px;
   height: 750px;
-
   padding: 20px 50px;
-
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -138,13 +136,15 @@ export const HomeTextWrapper = styled.div`
   @media (max-width: 1500px) {
     width: 400px;
   }
-  @media (max-width: 1227px) {
+  @media (max-width: 1091px) {
+    padding: 50px 0px;
     width: 300px;
   }
-  @media (max-width: 1227px) {
+  @media (max-width: 400px) {
     padding: 50px 0px;
     width: 100%;
   }
+
 `;
 
 export const HomeTitleArea = styled.div`
@@ -157,7 +157,7 @@ export const HomeTitleArea = styled.div`
   @media (max-width: 1500px) {
     font-size: 4.5rem;
   }
-  @media (max-width: 750px) {
+  @media (max-width: 1200px) {
     width: 400px;
     font-size: 3.5rem;
   }
@@ -215,7 +215,11 @@ export const HomeIntrodueArea = styled.div`
     font-size: 1.2rem;
   }
 
-  @media (max-width: 690px) {
+  @media (max-width: 1227px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 750px) {
     width: 100%;
     font-size: 1.1rem;
   }
@@ -270,7 +274,6 @@ export const HomeImgWrapper = styled.div`
 
 export const HomeWomanImg = styled.img`
   width: 540px;
-
   margin-right: 10px;
   @media (max-width: 1300px) {
     margin-top: 200px;
@@ -296,10 +299,7 @@ export const CardWrapper = styled.div`
   height: 300px;
   top: 130px;
   right: 0px;
-  @media (max-width: 1206px) {
-    top: 200px;
-    right: -50px;
-  }
+
   @media (max-width: 1090px) {
     display: none;
   }

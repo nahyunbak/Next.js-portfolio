@@ -1,9 +1,7 @@
 import styled, { css } from "styled-components";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-
 import { AiOutlineGithub, AiTwotoneBulb } from "react-icons/ai";
 import { RiPagesFill } from "react-icons/ri";
-
 import LinkN from "next/link";
 
 import {
@@ -241,6 +239,11 @@ export const NestedProjectAreaB = styled.div<NumType>`
 export const NestedProjectAreaC = styled.div<NumType>`
   ${nestedProjectStyle}
   display: ${(props) => (props.pageNum === 3 ? "flex" : "none")};
+`;
+
+export const NestedProjectAreaD = styled.div<NumType>`
+  ${nestedProjectStyle}
+  display: ${(props) => (props.pageNum === 4 ? "flex" : "none")};
 `;
 
 export const ProjectTitle = styled.div`
