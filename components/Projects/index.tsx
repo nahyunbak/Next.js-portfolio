@@ -45,7 +45,7 @@ const Projects = () => {
   const [pageNum, setPageNum] = useState<number>(1);
   const [portfolioImgNum, setPortfolioImgNum] = useState<number>(1);
 
-  const maxNum = 3;
+  const maxNum = 4;
   const maxNumA = 3;
   const maxNumB = 5;
   const maxNumC = 2;
